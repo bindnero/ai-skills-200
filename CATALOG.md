@@ -1,19 +1,19 @@
 # Catalog
 
-200 skills across 8 categories. Every skill is an [Agent Skills](https://agentskills.io) bundle: a folder containing `SKILL.md` with `name` + `description` frontmatter.
+205 skills across 8 categories. Every skill is an [Agent Skills](https://agentskills.io) bundle: a folder containing `SKILL.md` with `name` + `description` frontmatter.
 
 Regenerate this file with `npm run catalog` after editing anything under `skills/`.
 
 ## Contents
 
 - **[AI & Agents](#ai-agents)** — 25 skills — Prompt and system-prompt design, tool calling, multi-agent orchestration, RAG pipelines, embeddings and chunking, context management, cost control, evaluation, hallucination mitigation, guardrails, prompt injection defense, MCP, and streaming.
-- **[Backend & API Engineering](#backend-api)** — 25 skills — REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.
-- **[DevOps & Cloud](#devops-cloud)** — 25 skills — CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.
-- **[Frontend & Web Development](#frontend-web)** — 25 skills — CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
+- **[Backend & API Engineering](#backend-api)** — 27 skills — REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.
+- **[DevOps & Cloud](#devops-cloud)** — 26 skills — CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.
+- **[Frontend & Web Development](#frontend-web)** — 26 skills — CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
 - **[Security](#security)** — 25 skills — Threat modeling, OWASP classes, injection defenses, authn / authz, secure headers and CSP, encryption, password and MFA handling, secrets, supply chain, signing, SAST, penetration testing, forensics, privacy, and GDPR.
 - **[SEO](#seo)** — 25 skills — Technical audits, keyword and SERP research, on-page and metadata work, schema markup, site architecture, indexation control, international / local / ecommerce / programmatic SEO, migrations, and AI search visibility.
 - **[Testing & Quality](#testing-quality)** — 25 skills — Unit through end-to-end strategy, visual regression, contract and property-based testing, load and mutation testing, accessibility testing, mocks and fixtures, flakiness triage, parallel execution, benchmarks, chaos, and quality gates.
-- **[UI/UX & Design](#uiux-design)** — 25 skills — Research, personas, information architecture, wireframes, interaction design, design system governance, color / type / spacing systems, motion, accessibility, usability testing, forms UX, and data visualization.
+- **[UI/UX & Design](#uiux-design)** — 26 skills — Research, personas, information architecture, wireframes, interaction design, design system governance, color / type / spacing systems, motion, accessibility, usability testing, forms UX, and data visualization.
 
 ## ai-agents
 
@@ -51,13 +51,14 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 
 ## backend-api
 
-**Backend & API Engineering** — 25 skills
+**Backend & API Engineering** — 27 skills
 
 > REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.
 
 | Skill | Description |
 | --- | --- |
 | [`api-documentation`](skills/backend-api/api-documentation/SKILL.md) | Produces accurate OpenAPI specs and runnable documentation with typed clients generated from the contract. Use when writing or updating an OpenAPI document, adding endpoint examples, or publishing an SDK reference. |
+| [`api-payload-compression`](skills/backend-api/api-payload-compression/SKILL.md) | Shrinks API and static response bodies over the wire with gzip and Brotli negotiation, a minimum size threshold, correct Vary and ETag handling, and streaming exceptions. Use when JSON responses or assets are large on the network, when mobile clients report slow API calls, or when transfer size and bandwidth cost need reducing. |
 | [`api-versioning`](skills/backend-api/api-versioning/SKILL.md) | Evolves public HTTP APIs with URL or header versioning, additive-change discipline, and a dated deprecation runway. Use when shipping a breaking change to a live endpoint or retiring an old version safely. |
 | [`auth-token-lifecycle`](skills/backend-api/auth-token-lifecycle/SKILL.md) | Issues, rotates, refreshes, and revokes access and refresh tokens with reuse detection and server-side allowlists. Use when designing login flows, token expiry, or logout that must actually invalidate access. |
 | [`background-jobs`](skills/backend-api/background-jobs/SKILL.md) | Runs slow or retrying work outside the request cycle with a durable queue, idempotent handlers, and exponential backoff. Use when responding fast matters but the work needs retries, scheduling, or fan-out. |
@@ -80,12 +81,13 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`rate-limiting`](skills/backend-api/rate-limiting/SKILL.md) | Enforces request quotas with token-bucket and sliding-window limiters, tiering, and standards-compliant headers. Use when protecting an endpoint from abuse, adding per-tenant quotas, or diagnosing unexpected 429 responses. |
 | [`rest-api-design`](skills/backend-api/rest-api-design/SKILL.md) | Designs resource-oriented HTTP endpoints with correct method semantics, status codes, and un-enveloped response bodies. Use when creating or reviewing REST routes, controllers, or OpenAPI specs where URL layout and verb choice are being decided. |
 | [`session-management`](skills/backend-api/session-management/SKILL.md) | Manages server-side browser sessions with secure cookies, idle and absolute timeouts, and fixation-safe rotation. Use when implementing login and logout, cookie policy, concurrent session limits, or per-request session lookup. |
+| [`system-design`](skills/backend-api/system-design/SKILL.md) | Turns a vague feature request into a written system design with capacity numbers, a data model, component boundaries, named failure modes, and a staged rollout. Use when starting a new service or a cross-cutting feature, when a design review is due before code exists, or when a scaling limit must be reasoned about up front. |
 | [`webhook-delivery`](skills/backend-api/webhook-delivery/SKILL.md) | Delivers outbound webhooks with signed payloads, exponential-backoff retries, and replayable delivery logs. Use when notifying external systems of changes, or implementing a webhook receiver. |
 | [`websocket-realtime`](skills/backend-api/websocket-realtime/SKILL.md) | Builds resilient WebSocket servers with heartbeat liveness, backpressure handling, and Redis-backed fan-out. Use when adding live updates, presence, or subscriptions over a persistent connection rather than polling. |
 
 ## devops-cloud
 
-**DevOps & Cloud** — 25 skills
+**DevOps & Cloud** — 26 skills
 
 > CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.
 
@@ -106,6 +108,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`incident-response`](skills/devops-cloud/incident-response/SKILL.md) | Runs production incident response with severity definitions, incident commander roles, runbook-driven mitigation, stakeholder comms and blameless postmortems. Use when responding to an outage, defining an on-call process, or writing a post-incident review. |
 | [`infrastructure-testing`](skills/devops-cloud/infrastructure-testing/SKILL.md) | Tests infrastructure as code with Terratest, Checkov, Trivy, tfsec, kubeconform and OPA policy gates plus per-plan cost assertions. Use when adding automated tests to Terraform or Kubernetes changes, or when preventing insecure infrastructure from merging. |
 | [`kubernetes-manifests`](skills/devops-cloud/kubernetes-manifests/SKILL.md) | Authors raw Kubernetes Deployments, Services, probes, resource limits, PodDisruptionBudgets and topology spread constraints, plus kustomize overlays. Use when writing or debugging YAML for kubectl apply, when a pod is CrashLoopBackOff or Pending, or when replacing a Helm chart with plain manifests. |
+| [`load-balancer-configuration`](skills/devops-cloud/load-balancer-configuration/SKILL.md) | Configures application and network load balancers with health checks, least-request algorithms, TLS termination, connection draining, and retry limits that avoid amplification. Use when scaling a service past one instance, when rolling deploys drop requests, or when traffic needs distributing across zones or regions. |
 | [`metrics-and-alerting`](skills/devops-cloud/metrics-and-alerting/SKILL.md) | Defines Prometheus metrics with the RED method, controls cardinality, and writes recording and multi-window multi-burn-rate alerting rules. Use when adding a metric, tuning an SLO alert, or when Prometheus is high-cardinality, expensive, or paging on noise. |
 | [`observability-setup`](skills/devops-cloud/observability-setup/SKILL.md) | Wires end-to-end observability with OpenTelemetry auto-instrumentation, a Collector, Prometheus, Grafana, Loki and Tempo plus real health endpoints. Use when adding telemetry to a service, standing up a metrics/log/trace pipeline, or turning on readiness and liveness probes. |
 | [`release-management`](skills/devops-cloud/release-management/SKILL.md) | Runs a release process with semantic versioning, conventional commits, automated changelog and tag generation, SBOM-attested artifacts and staged promotion. Use when cutting a release, structuring a changelog, or making release metadata traceable to a commit. |
@@ -119,7 +122,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 
 ## frontend-web
 
-**Frontend & Web Development** — 25 skills
+**Frontend & Web Development** — 26 skills
 
 > CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
 
@@ -139,6 +142,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`html-semantics`](skills/frontend-web/html-semantics/SKILL.md) | Replaces ARIA-laden div soup with native HTML — landmarks, heading order, real buttons and lists, label association, and ARIA only where the platform lacks an element. Use when markup is a wall of divs, screen reader output is unusable, or a keyboard user cannot operate a control. |
 | [`i18n-implementation`](skills/frontend-web/i18n-implementation/SKILL.md) | Localises interfaces with ICU MessageFormat plurals, `Intl` APIs for dates/numbers/relative time, typed message keys, locale routing with `hreflang`, and RTL support. Use when extracting hardcoded strings, adding a language switcher, or fixing broken plurals, date formats, and RTL layouts. |
 | [`image-optimization`](skills/frontend-web/image-optimization/SKILL.md) | Delivers correctly sized, correctly prioritised images using `srcset`/`sizes`, `<picture>` art direction, AVIF/WebP, explicit dimensions to prevent CLS, and LCP-aware `fetchpriority`. Use when images dominate page weight, LCP is an image, or layouts shift when pictures load. |
+| [`input-event-throttling`](skills/frontend-web/input-event-throttling/SKILL.md) | Rate-limits high-frequency UI events with debounce, throttle, requestAnimationFrame batching, AbortController cancellation, and passive listeners. Use when typing or scrolling triggers network calls or heavy renders, when input feels laggy, or when keystroke handlers cause jank on low-end devices. |
 | [`lazy-loading-strategies`](skills/frontend-web/lazy-loading-strategies/SKILL.md) | Splits and defers JavaScript and media with `import()`, `React.lazy`/Suspense, route-level chunking, `IntersectionObserver`, and `content-visibility`. Use when the initial bundle is too large, below-the-fold widgets hydrate needlessly, or embeds and third-party scripts slow first interaction. |
 | [`nextjs-app-router`](skills/frontend-web/nextjs-app-router/SKILL.md) | Implements Next.js App Router correctly — Server Components, async request APIs, Server Actions with revalidation, streaming Suspense, route handlers, and metadata. Use when building routes under `app/`, fixing stale cached pages after mutations, or eliminating server/client waterfalls and `"use client"` overuse. |
 | [`react-performance`](skills/frontend-web/react-performance/SKILL.md) | Profiles and eliminates wasted React renders with narrow subscriptions, split contexts, memo boundaries, `useDeferredValue`, and Server Components. Use when pages feel sluggish, React DevTools Profiler shows high commit counts, a `memo` fix did not work, or you need to break a render/update waterfall. |
@@ -255,7 +259,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 
 ## uiux-design
 
-**UI/UX & Design** — 25 skills
+**UI/UX & Design** — 26 skills
 
 > Research, personas, information architecture, wireframes, interaction design, design system governance, color / type / spacing systems, motion, accessibility, usability testing, forms UX, and data visualization.
 
@@ -280,6 +284,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`persona-synthesis`](skills/uiux-design/persona-synthesis/SKILL.md) | Synthesizes raw research notes into jobs-to-be-done statements, affinity clusters, and evidence-backed personas with prioritized needs and behaviors instead of demographic fiction. Use when interview notes must become something a team can design against, or when existing personas have no traceable research behind them. |
 | [`responsive-navigation`](skills/uiux-design/responsive-navigation/SKILL.md) | Designs navigation that adapts across breakpoints using persistent sidebars, disclosure menus, off-canvas drawers, and bottom tab bars with correct ARIA and focus management. Use when converting a desktop nav to mobile or when a menu breaks at tablet width. |
 | [`screen-reader-compatibility`](skills/uiux-design/screen-reader-compatibility/SKILL.md) | Verifies screen reader behavior across VoiceOver, NVDA, and TalkBack by tracing focus order, accessible names, roles, states, and live-region announcements. Use when a page is unusable with a screen reader, when building custom widgets, or before claiming accessibility conformance. |
+| [`skeleton-loading-ui`](skills/uiux-design/skeleton-loading-ui/SKILL.md) | Designs loading placeholders that match final layout, prevent layout shift, and set honest timing expectations without fake progress bars. Use when a view waits on data before rendering, when perceived performance is the complaint, or when spinners make an interface feel unpredictable. |
 | [`spacing-and-grid`](skills/uiux-design/spacing-and-grid/SKILL.md) | Applies spacing scales, layout grids, stack primitives, and container queries so layout stays consistent across breakpoints and themes. Use when fixing inconsistent padding and gutters, building responsive layouts, or replacing hardcoded pixel values with tokens. |
 | [`typography-systems`](skills/uiux-design/typography-systems/SKILL.md) | Defines a typographic scale using a ratio with paired line-heights, measure limits, weight and optical-size axes, and fluid sizing with clamp(). Use when setting type styles, fixing dense or unreadable body text, or making typography responsive without hardcoded breakpoints. |
 | [`usability-testing`](skills/uiux-design/usability-testing/SKILL.md) | Plans and runs task-based usability tests with moderated sessions, think-aloud protocol, defined success metrics, severity-based issue ranking, and SUS scoring. Use when validating a design before build or after release, or when prioritizing a backlog of usability problems. |

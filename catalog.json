@@ -1,7 +1,7 @@
 {
   "name": "ai-skills-200",
   "version": "1.0.0",
-  "total": 200,
+  "total": 205,
   "standard": "Agent Skills (agentskills.io) — SKILL.md directory bundle",
   "targets": {
     "agents": {
@@ -234,13 +234,19 @@
       "id": "backend-api",
       "title": "Backend & API Engineering",
       "blurb": "REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.",
-      "count": 25,
+      "count": 27,
       "skills": [
         {
           "name": "api-documentation",
           "description": "Produces accurate OpenAPI specs and runnable documentation with typed clients generated from the contract. Use when writing or updating an OpenAPI document, adding endpoint examples, or publishing an SDK reference.",
           "folder": "api-documentation",
           "lines": 133
+        },
+        {
+          "name": "api-payload-compression",
+          "description": "Shrinks API and static response bodies over the wire with gzip and Brotli negotiation, a minimum size threshold, correct Vary and ETag handling, and streaming exceptions. Use when JSON responses or assets are large on the network, when mobile clients report slow API calls, or when transfer size and bandwidth cost need reducing.",
+          "folder": "api-payload-compression",
+          "lines": 135
         },
         {
           "name": "api-versioning",
@@ -375,6 +381,12 @@
           "lines": 173
         },
         {
+          "name": "system-design",
+          "description": "Turns a vague feature request into a written system design with capacity numbers, a data model, component boundaries, named failure modes, and a staged rollout. Use when starting a new service or a cross-cutting feature, when a design review is due before code exists, or when a scaling limit must be reasoned about up front.",
+          "folder": "system-design",
+          "lines": 87
+        },
+        {
           "name": "webhook-delivery",
           "description": "Delivers outbound webhooks with signed payloads, exponential-backoff retries, and replayable delivery logs. Use when notifying external systems of changes, or implementing a webhook receiver.",
           "folder": "webhook-delivery",
@@ -392,7 +404,7 @@
       "id": "devops-cloud",
       "title": "DevOps & Cloud",
       "blurb": "CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.",
-      "count": 25,
+      "count": 26,
       "skills": [
         {
           "name": "aws-deployment",
@@ -485,6 +497,12 @@
           "lines": 166
         },
         {
+          "name": "load-balancer-configuration",
+          "description": "Configures application and network load balancers with health checks, least-request algorithms, TLS termination, connection draining, and retry limits that avoid amplification. Use when scaling a service past one instance, when rolling deploys drop requests, or when traffic needs distributing across zones or regions.",
+          "folder": "load-balancer-configuration",
+          "lines": 131
+        },
+        {
           "name": "metrics-and-alerting",
           "description": "Defines Prometheus metrics with the RED method, controls cardinality, and writes recording and multi-window multi-burn-rate alerting rules. Use when adding a metric, tuning an SLO alert, or when Prometheus is high-cardinality, expensive, or paging on noise.",
           "folder": "metrics-and-alerting",
@@ -550,7 +568,7 @@
       "id": "frontend-web",
       "title": "Frontend & Web Development",
       "blurb": "CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.",
-      "count": 25,
+      "count": 26,
       "skills": [
         {
           "name": "astro-static-sites",
@@ -635,6 +653,12 @@
           "description": "Delivers correctly sized, correctly prioritised images using `srcset`/`sizes`, `<picture>` art direction, AVIF/WebP, explicit dimensions to prevent CLS, and LCP-aware `fetchpriority`. Use when images dominate page weight, LCP is an image, or layouts shift when pictures load.",
           "folder": "image-optimization",
           "lines": 126
+        },
+        {
+          "name": "input-event-throttling",
+          "description": "Rate-limits high-frequency UI events with debounce, throttle, requestAnimationFrame batching, AbortController cancellation, and passive listeners. Use when typing or scrolling triggers network calls or heavy renders, when input feels laggy, or when keystroke handlers cause jank on low-end devices.",
+          "folder": "input-event-throttling",
+          "lines": 143
         },
         {
           "name": "lazy-loading-strategies",
@@ -1182,7 +1206,7 @@
       "id": "uiux-design",
       "title": "UI/UX & Design",
       "blurb": "Research, personas, information architecture, wireframes, interaction design, design system governance, color / type / spacing systems, motion, accessibility, usability testing, forms UX, and data visualization.",
-      "count": 25,
+      "count": 26,
       "skills": [
         {
           "name": "accessibility-audit",
@@ -1297,6 +1321,12 @@
           "description": "Verifies screen reader behavior across VoiceOver, NVDA, and TalkBack by tracing focus order, accessible names, roles, states, and live-region announcements. Use when a page is unusable with a screen reader, when building custom widgets, or before claiming accessibility conformance.",
           "folder": "screen-reader-compatibility",
           "lines": 123
+        },
+        {
+          "name": "skeleton-loading-ui",
+          "description": "Designs loading placeholders that match final layout, prevent layout shift, and set honest timing expectations without fake progress bars. Use when a view waits on data before rendering, when perceived performance is the complaint, or when spinners make an interface feel unpredictable.",
+          "folder": "skeleton-loading-ui",
+          "lines": 125
         },
         {
           "name": "spacing-and-grid",

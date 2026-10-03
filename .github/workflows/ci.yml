@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   pull_request:
-    branches: [main]
+    branches: [main, master]
 
 jobs:
   check:
@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 20
 
-      # Enforce the format contract across all 200 skill bundles.
+      # Enforce the format contract across all 205 skill bundles.
       - name: Validate skills
         run: npm run validate
 
@@ -64,7 +64,7 @@ jobs:
           for d in .agents .opencode .claude .cursor .windsurf .codex .gemini/config .agent; do
             n=$(ls "$d/skills" 2>/dev/null | wc -l)
             echo "$d/skills: $n"
-            [ "$n" -eq 200 ] || { echo "expected 200 in $d"; exit 1; }
+            [ "$n" -eq 205 ] || { echo "expected 205 in $d"; exit 1; }
           done
       - name: Uninstall and verify clean
         run: |

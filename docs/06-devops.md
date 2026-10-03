@@ -2,7 +2,7 @@
 
 Getting code into production repeatedly and safely, and then knowing what your systems are doing once they are there.
 
-25 skills. Each row links to the bundle — read it before doing the work it describes.
+26 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Delivery
 
@@ -34,6 +34,14 @@ Declarative resources and how to trust them.
 | --- | --- |
 | [`terraform-modules`](../skills/devops-cloud/terraform-modules/SKILL.md) | Authors reusable Terraform 1.9+ modules with typed variables, count and for_each, moved blocks, check blocks and Terratest suites. Use when extracting infrastructure into a versioned module, fixing state coupling, or passing plan-time assertions. |
 | [`infrastructure-testing`](../skills/devops-cloud/infrastructure-testing/SKILL.md) | Tests infrastructure as code with Terratest, Checkov, Trivy, tfsec, kubeconform and OPA policy gates plus per-plan cost assertions. Use when adding automated tests to Terraform or Kubernetes changes, or when preventing insecure infrastructure from merging. |
+
+## Traffic management
+
+Getting requests to the right instance at the right time.
+
+| Skill | Use it when |
+| --- | --- |
+| [`load-balancer-configuration`](../skills/devops-cloud/load-balancer-configuration/SKILL.md) | Configures application and network load balancers with health checks, least-request algorithms, TLS termination, connection draining, and retry limits that avoid amplification. Use when scaling a service past one instance, when rolling deploys drop requests, or when traffic needs distributing across zones or regions. |
 
 ## Platforms
 

@@ -1,7 +1,7 @@
 {
   "name": "ai-skills-200",
   "version": "1.0.0",
-  "description": "200 production-grade Agent Skills for web/app development, SEO, UI/UX, backend, DevOps, testing, security and AI agents. Installs into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed and Codex CLI.",
+  "description": "205 production-grade Agent Skills for web/app development, SEO, UI/UX, backend, DevOps, testing, security and AI agents. Installs into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed and Codex CLI.",
   "type": "module",
   "license": "MIT",
   "keywords": [

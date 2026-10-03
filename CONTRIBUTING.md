@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve this collection. It is 200 skills, so quality matters more than volume — a small number of excellent skills beats a large number of mediocre ones.
+Thanks for helping improve this collection. It is 205 skills, so quality matters more than volume — a small number of excellent skills beats a large number of mediocre ones.
 
 ## The contract (validator-enforced)
 

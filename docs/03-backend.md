@@ -2,7 +2,7 @@
 
 Designing and operating the server side: resource shapes and contracts, transport choices, the cross-cutting concerns every public API needs, and the data layer underneath.
 
-25 skills. Each row links to the bundle — read it before doing the work it describes.
+27 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Transport & contracts
 
@@ -29,6 +29,15 @@ The things that separate a demo endpoint from one you can put in front of strang
 | [`error-contract-design`](../skills/backend-api/error-contract-design/SKILL.md) | Defines stable machine-readable error codes with a Problem Details envelope and correct HTTP status mapping. Use when designing error responses, adding error types, or making failures programmatically distinguishable. |
 | [`rate-limiting`](../skills/backend-api/rate-limiting/SKILL.md) | Enforces request quotas with token-bucket and sliding-window limiters, tiering, and standards-compliant headers. Use when protecting an endpoint from abuse, adding per-tenant quotas, or diagnosing unexpected 429 responses. |
 | [`graphql-performance`](../skills/backend-api/graphql-performance/SKILL.md) | Optimizes GraphQL execution with DataLoader batching, query depth and cost limits, and response caching. Use when a GraphQL endpoint is slow, over-fetches, or needs protection against abusive queries. |
+| [`api-payload-compression`](../skills/backend-api/api-payload-compression/SKILL.md) | Shrinks API and static response bodies over the wire with gzip and Brotli negotiation, a minimum size threshold, correct Vary and ETag handling, and streaming exceptions. Use when JSON responses or assets are large on the network, when mobile clients report slow API calls, or when transfer size and bandwidth cost need reducing. |
+
+## Architecture
+
+Reasoning about the shape of the whole system before code exists.
+
+| Skill | Use it when |
+| --- | --- |
+| [`system-design`](../skills/backend-api/system-design/SKILL.md) | Turns a vague feature request into a written system design with capacity numbers, a data model, component boundaries, named failure modes, and a staged rollout. Use when starting a new service or a cross-cutting feature, when a design review is due before code exists, or when a scaling limit must be reasoned about up front. |
 
 ## Identity
 

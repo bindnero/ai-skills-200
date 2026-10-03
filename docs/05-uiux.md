@@ -2,7 +2,7 @@
 
 The reasoning behind the pixels: finding out what people need, structuring it, designing the interaction, and proving it works — including for people who do not use a mouse or a screen.
 
-25 skills. Each row links to the bundle — read it before doing the work it describes.
+26 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Discovering
 
@@ -65,6 +65,7 @@ The interface is mostly text, and mostly empty or broken.
 | --- | --- |
 | [`error-message-design`](../skills/uiux-design/error-message-design/SKILL.md) | Writes and places error messages that state what happened, why, and how to recover, using inline validation, error summaries, preserved input, and appropriate live-region urgency. Use when rewriting vague validation errors, choosing between inline and toast errors, or when forms fail users at submission. |
 | [`empty-state-design`](../skills/uiux-design/empty-state-design/SKILL.md) | Designs distinct empty states for first-run, no-results, cleared, error, and permission-restricted conditions with purposeful next actions and correct semantics. Use when a list or dashboard shows nothing and users do not know what to do next, or when zero-data and no-results are conflated. |
+| [`skeleton-loading-ui`](../skills/uiux-design/skeleton-loading-ui/SKILL.md) | Designs loading placeholders that match final layout, prevent layout shift, and set honest timing expectations without fake progress bars. Use when a view waits on data before rendering, when perceived performance is the complaint, or when spinners make an interface feel unpredictable. |
 | [`onboarding-flows`](../skills/uiux-design/onboarding-flows/SKILL.md) | Designs onboarding and activation flows with progressive profiling, checklists, contextual empty states, and time-to-first-value instrumentation. Use when reducing signup drop-off, getting new users to a first success moment, or simplifying a multi-step setup wizard. |
 | [`form-ux-patterns`](../skills/uiux-design/form-ux-patterns/SKILL.md) | Applies form patterns including correct input types and autocomplete tokens, persistent labels, inline validation on blur, input masking, and accessible error association. Use when building or fixing a form, reducing form abandonment, or adding autofill and password manager support. |
 | [`responsive-navigation`](../skills/uiux-design/responsive-navigation/SKILL.md) | Designs navigation that adapts across breakpoints using persistent sidebars, disclosure menus, off-canvas drawers, and bottom tab bars with correct ARIA and focus management. Use when converting a desktop nav to mobile or when a menu breaks at tablet width. |

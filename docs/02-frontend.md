@@ -2,7 +2,7 @@
 
 Everything that runs in the browser: how CSS is organised, how layouts hold up across breakpoints, how components are structured, how each major framework's idioms work, and how to stop the bundle and the page weight from getting out of hand.
 
-25 skills. Each row links to the bundle — read it before doing the work it describes.
+26 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Foundations
 
@@ -56,6 +56,7 @@ The loading pipeline end to end: what to defer, what to preload, what to measure
 | Skill | Use it when |
 | --- | --- |
 | [`lazy-loading-strategies`](../skills/frontend-web/lazy-loading-strategies/SKILL.md) | Splits and defers JavaScript and media with `import()`, `React.lazy`/Suspense, route-level chunking, `IntersectionObserver`, and `content-visibility`. Use when the initial bundle is too large, below-the-fold widgets hydrate needlessly, or embeds and third-party scripts slow first interaction. |
+| [`input-event-throttling`](../skills/frontend-web/input-event-throttling/SKILL.md) | Rate-limits high-frequency UI events with debounce, throttle, requestAnimationFrame batching, AbortController cancellation, and passive listeners. Use when typing or scrolling triggers network calls or heavy renders, when input feels laggy, or when keystroke handlers cause jank on low-end devices. |
 | [`image-optimization`](../skills/frontend-web/image-optimization/SKILL.md) | Delivers correctly sized, correctly prioritised images using `srcset`/`sizes`, `<picture>` art direction, AVIF/WebP, explicit dimensions to prevent CLS, and LCP-aware `fetchpriority`. Use when images dominate page weight, LCP is an image, or layouts shift when pictures load. |
 | [`font-loading`](../skills/frontend-web/font-loading/SKILL.md) | Loads web fonts without invisible text or layout shift using `font-display`, metric-compatible fallbacks (`size-adjust`, `ascent-override`), `preload`, and subsetting. Use when text flashes invisible (FOIT), reflows when fonts arrive (FOUT), or a font request delays LCP. |
 | [`critical-css`](../skills/frontend-web/critical-css/SKILL.md) | Inlines above-the-fold CSS and defers the rest so first paint stops waiting on render-blocking stylesheets. Use when FCP/LCP are delayed by CSS, when `@import` chains appear in the Network panel, or when a large global stylesheet blocks rendering. |
