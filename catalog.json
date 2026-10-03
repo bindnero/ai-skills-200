@@ -1,7 +1,7 @@
 {
   "name": "ai-skills-200",
   "version": "1.0.0",
-  "total": 205,
+  "total": 210,
   "standard": "Agent Skills (agentskills.io) — SKILL.md directory bundle",
   "targets": {
     "agents": {
@@ -233,8 +233,8 @@
     {
       "id": "backend-api",
       "title": "Backend & API Engineering",
-      "blurb": "REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.",
-      "count": 27,
+      "blurb": "REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, typed error results, error contracts, auth flows, jobs, queues, caching, and database work.",
+      "count": 28,
       "skills": [
         {
           "name": "api-documentation",
@@ -387,6 +387,12 @@
           "lines": 87
         },
         {
+          "name": "typescript-result-handling",
+          "description": "Models fallible operations as typed Result and Option values with exhaustive matching instead of thrown exceptions, unchecked nulls, or ad-hoc error codes. Use when errors are caught and ignored, when a function returns null for several different reasons, when building a library callers must use safely, or when designing an error contract that stays type-safe end to end.",
+          "folder": "typescript-result-handling",
+          "lines": 124
+        },
+        {
           "name": "webhook-delivery",
           "description": "Delivers outbound webhooks with signed payloads, exponential-backoff retries, and replayable delivery logs. Use when notifying external systems of changes, or implementing a webhook receiver.",
           "folder": "webhook-delivery",
@@ -403,8 +409,8 @@
     {
       "id": "devops-cloud",
       "title": "DevOps & Cloud",
-      "blurb": "CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.",
-      "count": 26,
+      "blurb": "CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, feature flag rollouts, releases, rollback, backups, and cost control.",
+      "count": 27,
       "skills": [
         {
           "name": "aws-deployment",
@@ -459,6 +465,12 @@
           "description": "Designs HTTP caching with Cache-Control, Vary, CDN stale-while-revalidate, surrogate keys and cache invalidation webhooks. Use when tuning CDN or browser cache headers, reducing origin load, or fixing stale or leaking content at the edge.",
           "folder": "edge-caching-strategy",
           "lines": 147
+        },
+        {
+          "name": "feature-flag-rollouts",
+          "description": "Ships features behind feature flags with typed definitions, percentage and cohort targeting, kill switches, staleness expiry, and a cleanup discipline so no flag outlives its rollout. Use when decoupling deploy from release, when rolling out to a percentage of users, when designing a kill switch for a risky change, or when auditing flags that are still on after a year.",
+          "folder": "feature-flag-rollouts",
+          "lines": 131
         },
         {
           "name": "gcp-deployment",
@@ -567,8 +579,8 @@
     {
       "id": "frontend-web",
       "title": "Frontend & Web Development",
-      "blurb": "CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.",
-      "count": 26,
+      "blurb": "CSS architecture, container queries, layout systems, design tokens, TypeScript discipline, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.",
+      "count": 29,
       "skills": [
         {
           "name": "astro-static-sites",
@@ -611,6 +623,12 @@
           "description": "Restructures tangled stylesheets into predictable cascade layers, scoped component styles, and zero-specificity extension points. Use when CSS specificity wars, `:deep`/global selector bleed, duplicate override blocks, or \"why is this heading the wrong size\" problems appear, or when migrating a monolithic CSS file to CSS Modules, BEM, or `@layer`.",
           "folder": "css-architecture",
           "lines": 114
+        },
+        {
+          "name": "css-container-queries",
+          "description": "Makes components respond to their own size instead of the viewport using CSS container queries, container-type, container-name, and style queries. Use when a card, sidebar, or widget renders correctly in one slot and breaks in another, when a reusable component hardcodes breakpoint logic, or when viewport media queries cannot express a component-level layout switch.",
+          "folder": "css-container-queries",
+          "lines": 122
         },
         {
           "name": "dark-mode-theming",
@@ -707,6 +725,18 @@
           "description": "Structures Tailwind CSS v4 projects using CSS-first configuration with `@theme`, `@layer`, `@custom-variant`, and `@utility` instead of a sprawling `tailwind.config.js`. Use when setting up Tailwind v4, wiring design tokens into utilities, adding container-query or dark-mode variants, or stopping utility sprawl in component markup.",
           "folder": "tailwind-architecture",
           "lines": 125
+        },
+        {
+          "name": "typescript-generic-patterns",
+          "description": "Designs TypeScript APIs with generics, discriminated unions, key remapping, and template literal types so callers keep inference instead of annotating every call. Use when a function or hook is drowning in type parameters, when state needs a discriminated union instead of optional booleans, when writing type-safe config or event maps, or when a prop type grows a fifth boolean flag.",
+          "folder": "typescript-generic-patterns",
+          "lines": 133
+        },
+        {
+          "name": "typescript-strict-mode",
+          "description": "Turns on TypeScript strict-family compiler flags and clears the errors they surface, using tsconfig strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes, and satisfies. Use when migrating a project to strict mode, when implicit any or unchecked index access is hiding bugs, when a large batch of type errors blocks a build, or when deciding which strict flag to adopt next.",
+          "folder": "typescript-strict-mode",
+          "lines": 126
         },
         {
           "name": "vue-patterns",

@@ -2,7 +2,7 @@
 
 Designing and operating the server side: resource shapes and contracts, transport choices, the cross-cutting concerns every public API needs, and the data layer underneath.
 
-27 skills. Each row links to the bundle — read it before doing the work it describes.
+28 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Transport & contracts
 
@@ -27,6 +27,7 @@ The things that separate a demo endpoint from one you can put in front of strang
 | [`idempotency-keys`](../skills/backend-api/idempotency-keys/SKILL.md) | Makes HTTP writes safely retryable using an `Idempotency-Key` header, request fingerprinting, and atomic replay storage. Use when implementing POST handlers for payments, orders, or any endpoint clients will retry after a timeout. |
 | [`input-validation`](../skills/backend-api/input-validation/SKILL.md) | Validates and coerces untrusted API input with schema libraries, typed errors, and size limits enforced before parsing. Use when adding request validation to endpoints, hardening parsers, or turning untyped bodies into TypeScript types. |
 | [`error-contract-design`](../skills/backend-api/error-contract-design/SKILL.md) | Defines stable machine-readable error codes with a Problem Details envelope and correct HTTP status mapping. Use when designing error responses, adding error types, or making failures programmatically distinguishable. |
+| [`typescript-result-handling`](../skills/backend-api/typescript-result-handling/SKILL.md) | Models fallible operations as typed Result and Option values with exhaustive matching instead of thrown exceptions, unchecked nulls, or ad-hoc error codes. Use when errors are caught and ignored, when a function returns null for several different reasons, when building a library callers must use safely, or when designing an error contract that stays type-safe end to end. |
 | [`rate-limiting`](../skills/backend-api/rate-limiting/SKILL.md) | Enforces request quotas with token-bucket and sliding-window limiters, tiering, and standards-compliant headers. Use when protecting an endpoint from abuse, adding per-tenant quotas, or diagnosing unexpected 429 responses. |
 | [`graphql-performance`](../skills/backend-api/graphql-performance/SKILL.md) | Optimizes GraphQL execution with DataLoader batching, query depth and cost limits, and response caching. Use when a GraphQL endpoint is slow, over-fetches, or needs protection against abusive queries. |
 | [`api-payload-compression`](../skills/backend-api/api-payload-compression/SKILL.md) | Shrinks API and static response bodies over the wire with gzip and Brotli negotiation, a minimum size threshold, correct Vary and ETag handling, and streaming exceptions. Use when JSON responses or assets are large on the network, when mobile clients report slow API calls, or when transfer size and bandwidth cost need reducing. |

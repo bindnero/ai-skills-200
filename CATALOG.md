@@ -1,15 +1,15 @@
 # Catalog
 
-205 skills across 8 categories. Every skill is an [Agent Skills](https://agentskills.io) bundle: a folder containing `SKILL.md` with `name` + `description` frontmatter.
+210 skills across 8 categories. Every skill is an [Agent Skills](https://agentskills.io) bundle: a folder containing `SKILL.md` with `name` + `description` frontmatter.
 
 Regenerate this file with `npm run catalog` after editing anything under `skills/`.
 
 ## Contents
 
 - **[AI & Agents](#ai-agents)** — 25 skills — Prompt and system-prompt design, tool calling, multi-agent orchestration, RAG pipelines, embeddings and chunking, context management, cost control, evaluation, hallucination mitigation, guardrails, prompt injection defense, MCP, and streaming.
-- **[Backend & API Engineering](#backend-api)** — 27 skills — REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.
-- **[DevOps & Cloud](#devops-cloud)** — 26 skills — CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.
-- **[Frontend & Web Development](#frontend-web)** — 26 skills — CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
+- **[Backend & API Engineering](#backend-api)** — 28 skills — REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, typed error results, error contracts, auth flows, jobs, queues, caching, and database work.
+- **[DevOps & Cloud](#devops-cloud)** — 27 skills — CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, feature flag rollouts, releases, rollback, backups, and cost control.
+- **[Frontend & Web Development](#frontend-web)** — 29 skills — CSS architecture, container queries, layout systems, design tokens, TypeScript discipline, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
 - **[Security](#security)** — 25 skills — Threat modeling, OWASP classes, injection defenses, authn / authz, secure headers and CSP, encryption, password and MFA handling, secrets, supply chain, signing, SAST, penetration testing, forensics, privacy, and GDPR.
 - **[SEO](#seo)** — 25 skills — Technical audits, keyword and SERP research, on-page and metadata work, schema markup, site architecture, indexation control, international / local / ecommerce / programmatic SEO, migrations, and AI search visibility.
 - **[Testing & Quality](#testing-quality)** — 25 skills — Unit through end-to-end strategy, visual regression, contract and property-based testing, load and mutation testing, accessibility testing, mocks and fixtures, flakiness triage, parallel execution, benchmarks, chaos, and quality gates.
@@ -51,9 +51,9 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 
 ## backend-api
 
-**Backend & API Engineering** — 27 skills
+**Backend & API Engineering** — 28 skills
 
-> REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.
+> REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, typed error results, error contracts, auth flows, jobs, queues, caching, and database work.
 
 | Skill | Description |
 | --- | --- |
@@ -82,14 +82,15 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`rest-api-design`](skills/backend-api/rest-api-design/SKILL.md) | Designs resource-oriented HTTP endpoints with correct method semantics, status codes, and un-enveloped response bodies. Use when creating or reviewing REST routes, controllers, or OpenAPI specs where URL layout and verb choice are being decided. |
 | [`session-management`](skills/backend-api/session-management/SKILL.md) | Manages server-side browser sessions with secure cookies, idle and absolute timeouts, and fixation-safe rotation. Use when implementing login and logout, cookie policy, concurrent session limits, or per-request session lookup. |
 | [`system-design`](skills/backend-api/system-design/SKILL.md) | Turns a vague feature request into a written system design with capacity numbers, a data model, component boundaries, named failure modes, and a staged rollout. Use when starting a new service or a cross-cutting feature, when a design review is due before code exists, or when a scaling limit must be reasoned about up front. |
+| [`typescript-result-handling`](skills/backend-api/typescript-result-handling/SKILL.md) | Models fallible operations as typed Result and Option values with exhaustive matching instead of thrown exceptions, unchecked nulls, or ad-hoc error codes. Use when errors are caught and ignored, when a function returns null for several different reasons, when building a library callers must use safely, or when designing an error contract that stays type-safe end to end. |
 | [`webhook-delivery`](skills/backend-api/webhook-delivery/SKILL.md) | Delivers outbound webhooks with signed payloads, exponential-backoff retries, and replayable delivery logs. Use when notifying external systems of changes, or implementing a webhook receiver. |
 | [`websocket-realtime`](skills/backend-api/websocket-realtime/SKILL.md) | Builds resilient WebSocket servers with heartbeat liveness, backpressure handling, and Redis-backed fan-out. Use when adding live updates, presence, or subscriptions over a persistent connection rather than polling. |
 
 ## devops-cloud
 
-**DevOps & Cloud** — 26 skills
+**DevOps & Cloud** — 27 skills
 
-> CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.
+> CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, feature flag rollouts, releases, rollback, backups, and cost control.
 
 | Skill | Description |
 | --- | --- |
@@ -102,6 +103,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`distributed-tracing`](skills/devops-cloud/distributed-tracing/SKILL.md) | Instruments distributed traces with OpenTelemetry spans, W3C trace context propagation, span links for asynchronous work and controlled sampling. Use when adding tracing to a service, debugging latency across service or queue boundaries, or when traces are missing hops. |
 | [`docker-image-hardening`](skills/devops-cloud/docker-image-hardening/SKILL.md) | Hardens container images with multi-stage builds, non-root users, distroless or scratch bases, BuildKit secret mounts and SBOM/CVE scanning. Use when writing or shrinking a Dockerfile, fixing a failing image build, or clearing Trivy/Grype CVE findings on a pushed image. |
 | [`edge-caching-strategy`](skills/devops-cloud/edge-caching-strategy/SKILL.md) | Designs HTTP caching with Cache-Control, Vary, CDN stale-while-revalidate, surrogate keys and cache invalidation webhooks. Use when tuning CDN or browser cache headers, reducing origin load, or fixing stale or leaking content at the edge. |
+| [`feature-flag-rollouts`](skills/devops-cloud/feature-flag-rollouts/SKILL.md) | Ships features behind feature flags with typed definitions, percentage and cohort targeting, kill switches, staleness expiry, and a cleanup discipline so no flag outlives its rollout. Use when decoupling deploy from release, when rolling out to a percentage of users, when designing a kill switch for a risky change, or when auditing flags that are still on after a year. |
 | [`gcp-deployment`](skills/devops-cloud/gcp-deployment/SKILL.md) | Deploys services to Google Cloud with Cloud Run revisions and traffic splitting, GKE, Artifact Registry and Workload Identity Federation. Use when shipping to GCP, tuning Cloud Run concurrency and min-instances, or fixing CI auth and organization-policy errors. |
 | [`gitops-workflow`](skills/devops-cloud/gitops-workflow/SKILL.md) | Implements GitOps with Argo CD or Flux, ApplicationSets, Kustomize overlays, sync waves, health checks and progressive sync. Use when adopting pull-based deployment, fixing drift between Git and cluster state, or structuring multi-environment promotion. |
 | [`helm-chart-authoring`](skills/devops-cloud/helm-chart-authoring/SKILL.md) | Builds and debugs Helm 3 charts including Chart.yaml, typed values.schema.json, named templates in _helpers.tpl, subchart dependencies, hooks and helm-unittest suites. Use when packaging a service for helm install or helm upgrade, templating values, or fixing a chart that fails helm lint or renders empty manifests. |
@@ -122,9 +124,9 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 
 ## frontend-web
 
-**Frontend & Web Development** — 26 skills
+**Frontend & Web Development** — 29 skills
 
-> CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
+> CSS architecture, container queries, layout systems, design tokens, TypeScript discipline, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.
 
 | Skill | Description |
 | --- | --- |
@@ -135,6 +137,7 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`critical-css`](skills/frontend-web/critical-css/SKILL.md) | Inlines above-the-fold CSS and defers the rest so first paint stops waiting on render-blocking stylesheets. Use when FCP/LCP are delayed by CSS, when `@import` chains appear in the Network panel, or when a large global stylesheet blocks rendering. |
 | [`css-animations`](skills/frontend-web/css-animations/SKILL.md) | Animates interfaces with compositor-friendly properties, `prefers-reduced-motion` fallbacks, View Transitions, and scroll-driven animations. Use when adding motion to dialogs, lists, page navigations, or progress indicators, or when fixing janky animations and users reporting motion sickness. |
 | [`css-architecture`](skills/frontend-web/css-architecture/SKILL.md) | Restructures tangled stylesheets into predictable cascade layers, scoped component styles, and zero-specificity extension points. Use when CSS specificity wars, `:deep`/global selector bleed, duplicate override blocks, or "why is this heading the wrong size" problems appear, or when migrating a monolithic CSS file to CSS Modules, BEM, or `@layer`. |
+| [`css-container-queries`](skills/frontend-web/css-container-queries/SKILL.md) | Makes components respond to their own size instead of the viewport using CSS container queries, container-type, container-name, and style queries. Use when a card, sidebar, or widget renders correctly in one slot and breaks in another, when a reusable component hardcodes breakpoint logic, or when viewport media queries cannot express a component-level layout switch. |
 | [`dark-mode-theming`](skills/frontend-web/dark-mode-theming/SKILL.md) | Implements dark mode and multi-theme rendering with `color-scheme`, the CSS `light-dark()` function, semantic tokens, and a flash-free ThemeProvider. Use when adding a dark theme, honouring `prefers-color-scheme`, fixing a white flash on load, or tuning theme colours across native UI. |
 | [`design-tokens`](skills/frontend-web/design-tokens/SKILL.md) | Defines and pipelines design tokens in the W3C DTCG format into CSS custom properties, Tailwind theme variables, and Figma variables. Use when replacing hardcoded hex values and magic numbers, setting up multi-brand or multi-theme token sets, or syncing tokens between design files and code. |
 | [`font-loading`](skills/frontend-web/font-loading/SKILL.md) | Loads web fonts without invisible text or layout shift using `font-display`, metric-compatible fallbacks (`size-adjust`, `ascent-override`), `preload`, and subsetting. Use when text flashes invisible (FOIT), reflows when fonts arrive (FOUT), or a font request delays LCP. |
@@ -151,6 +154,8 @@ Regenerate this file with `npm run catalog` after editing anything under `skills
 | [`state-management`](skills/frontend-web/state-management/SKILL.md) | Decides where each piece of state belongs — component, URL, server cache, form, or global store — and implements it with narrow Zustand selectors, split contexts, or XState machines. Use when choosing between useState/context/store, fixing whole-tree re-renders from a wide context, or modelling multi-step and async workflows. |
 | [`svelte-kit-patterns`](skills/frontend-web/svelte-kit-patterns/SKILL.md) | Applies SvelteKit 2 and Svelte 5 conventions — universal versus server `load` functions, streamed promises, form actions with `use:enhance`, `hooks.server.ts`, and runes. Use when building SvelteKit routes, mutating data from the client, or fixing double-fetching and layout data loss between navigations. |
 | [`tailwind-architecture`](skills/frontend-web/tailwind-architecture/SKILL.md) | Structures Tailwind CSS v4 projects using CSS-first configuration with `@theme`, `@layer`, `@custom-variant`, and `@utility` instead of a sprawling `tailwind.config.js`. Use when setting up Tailwind v4, wiring design tokens into utilities, adding container-query or dark-mode variants, or stopping utility sprawl in component markup. |
+| [`typescript-generic-patterns`](skills/frontend-web/typescript-generic-patterns/SKILL.md) | Designs TypeScript APIs with generics, discriminated unions, key remapping, and template literal types so callers keep inference instead of annotating every call. Use when a function or hook is drowning in type parameters, when state needs a discriminated union instead of optional booleans, when writing type-safe config or event maps, or when a prop type grows a fifth boolean flag. |
+| [`typescript-strict-mode`](skills/frontend-web/typescript-strict-mode/SKILL.md) | Turns on TypeScript strict-family compiler flags and clears the errors they surface, using tsconfig strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes, and satisfies. Use when migrating a project to strict mode, when implicit any or unchecked index access is hiding bugs, when a large batch of type errors blocks a build, or when deciding which strict flag to adopt next. |
 | [`vue-patterns`](skills/frontend-web/vue-patterns/SKILL.md) | Applies Vue 3 Composition API conventions — `script setup`, `defineModel`, typed composables, `provide`/`inject` with injection keys, and Pinia setup stores — while avoiding reactivity-destroying destructuring. Use when writing or refactoring `.vue` SFCs, extracting logic into composables, or fixing stale values and re-render churn in Vue apps. |
 | [`web-components`](skills/frontend-web/web-components/SKILL.md) | Builds platform custom elements with Shadow DOM, constructable stylesheets, slots, form participation via `ElementInternals`, and Lit. Use when shipping framework-agnostic widgets, embedding a design-system component in a non-React host, or migrating a legacy web component. |
 | [`web-vitals-remediation`](skills/frontend-web/web-vitals-remediation/SKILL.md) | Diagnoses and fixes LCP, INP, and CLS regressions using the `web-vitals` attribution build, real-user monitoring, and field-versus-lab comparison. Use when Core Web Vitals scores drop, Lighthouse flags LCP/CLS/TBT, or users report a page that "feels slow" to interact with. |

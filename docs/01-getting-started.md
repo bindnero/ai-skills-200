@@ -29,7 +29,7 @@ That's the whole specification. No SDK, no plugin API, no runtime.
 
 ## Why this works across every tool
 
-Every major coding agent independently arrived at the same design, because it solves the same problem: **205 skill bodies will not fit in a context window, but 205 one-line descriptions will.**
+Every major coding agent independently arrived at the same design, because it solves the same problem: **210 skill bodies will not fit in a context window, but 210 one-line descriptions will.**
 
 | Stage | What is loaded | Size |
 | --- | --- | --- |
@@ -41,7 +41,7 @@ So the `description` is not documentation. It is the **retrieval key**. It is th
 
 ## The three levels of a skill
 
-Most of the 205 skills here are instruction-only: a single `SKILL.md`, no helper files. That keeps installs small and bodies readable.
+Most of the 210 skills here are instruction-only: a single `SKILL.md`, no helper files. That keeps installs small and bodies readable.
 
 When a skill genuinely needs more, the standard allows bundling:
 
@@ -65,7 +65,7 @@ cd ai-skills-200
 No install step, no `npm install` — there are zero dependencies.
 
 ```bash
-node scripts/install.mjs --list                    # browse all 205
+node scripts/install.mjs --list                    # browse all 210
 node scripts/install.mjs --search "core web vitals" # find the right ones
 node scripts/install.mjs --category seo,uiux-design -t agents,opencode
 ```
@@ -106,7 +106,7 @@ A reliable test: ask the agent something that should trigger exactly one skill, 
 
 ## What is actually installed
 
-`skills/` in this repo is the source of truth and stays that way. Installed copies land in tool directories, which are all gitignored, so cloning the repo never carries 205 duplicated bundles.
+`skills/` in this repo is the source of truth and stays that way. Installed copies land in tool directories, which are all gitignored, so cloning the repo never carries 210 duplicated bundles.
 
 If you'd rather have zero copies, opencode can read the collection directly:
 

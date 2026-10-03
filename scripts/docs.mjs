@@ -14,8 +14,9 @@ const META = {
     file: "02-frontend.md", title: "Frontend & Web Development",
     blurb: "Everything that runs in the browser: how CSS is organised, how layouts hold up across breakpoints, how components are structured, how each major framework's idioms work, and how to stop the bundle and the page weight from getting out of hand.",
     covers: [
-      ["Foundations", "How the browser is actually organised into layers, and why the cascade stops being your friend at scale.", ["css-architecture", "responsive-layouts", "design-tokens", "dark-mode-theming", "html-semantics"]],
+      ["Foundations", "How the browser is actually organised into layers, and why the cascade stops being your friend at scale.", ["css-architecture", "responsive-layouts", "css-container-queries", "design-tokens", "dark-mode-theming", "html-semantics"]],
       ["Components & state", "Component boundaries, ownership of state, and the framework-specific idioms worth knowing.", ["component-library-authoring", "state-management", "forms-validation", "react-performance", "vue-patterns"]],
+      ["TypeScript", "Compiler discipline, API design with generics and unions, and failure modelled as a value.", ["typescript-strict-mode", "typescript-generic-patterns"]],
       ["Frameworks", "Current routing, rendering and data-loading conventions for the mainstream meta-frameworks.", ["svelte-kit-patterns", "nextjs-app-router", "astro-static-sites", "i18n-implementation"]],
       ["Styling systems", "Utility-first architecture and animation that survives real content.", ["tailwind-architecture", "css-animations", "web-components"]],
       ["Performance", "The loading pipeline end to end: what to defer, what to preload, what to measure.", ["lazy-loading-strategies", "input-event-throttling", "image-optimization", "font-loading", "critical-css", "bundle-size-triage", "web-vitals-remediation"]],
@@ -27,7 +28,7 @@ const META = {
     blurb: "Designing and operating the server side: resource shapes and contracts, transport choices, the cross-cutting concerns every public API needs, and the data layer underneath.",
     covers: [
       ["Transport & contracts", "Choosing and shaping the wire format, and versioning it without breaking clients.", ["rest-api-design", "graphql-schema-design", "grpc-service-design", "websocket-realtime", "api-versioning", "api-documentation"]],
-      ["API mechanics", "The things that separate a demo endpoint from one you can put in front of strangers.", ["pagination-patterns", "idempotency-keys", "input-validation", "error-contract-design", "rate-limiting", "graphql-performance", "api-payload-compression"]],
+      ["API mechanics", "The things that separate a demo endpoint from one you can put in front of strangers.", ["pagination-patterns", "idempotency-keys", "input-validation", "error-contract-design", "typescript-result-handling", "rate-limiting", "graphql-performance", "api-payload-compression"]],
       ["Architecture", "Reasoning about the shape of the whole system before code exists.", ["system-design"]],
       ["Identity", "Tokens, sessions, third-party authorization, and files that come in from outside.", ["auth-token-lifecycle", "oauth2-integration", "session-management", "file-upload-handling"]],
       ["Async & messaging", "Work that must not happen inside a request.", ["background-jobs", "queue-design", "event-driven-architecture", "webhook-delivery"]],
@@ -63,7 +64,7 @@ const META = {
     file: "06-devops.md", title: "DevOps & Cloud",
     blurb: "Getting code into production repeatedly and safely, and then knowing what your systems are doing once they are there.",
     covers: [
-      ["Delivery", "The path from commit to running process.", ["ci-cd-pipelines", "release-management", "blue-green-deploy", "rollback-strategy", "gitops-workflow"]],
+      ["Delivery", "The path from commit to running process.", ["ci-cd-pipelines", "release-management", "feature-flag-rollouts", "blue-green-deploy", "rollback-strategy", "gitops-workflow"]],
       ["Containers & orchestration", "Packaging, scheduling, and packaging-at-scale.", ["docker-image-hardening", "kubernetes-manifests", "helm-chart-authoring"]],
       ["Infrastructure as code", "Declarative resources and how to trust them.", ["terraform-modules", "infrastructure-testing"]],
       ["Traffic management", "Getting requests to the right instance at the right time.", ["load-balancer-configuration"]],

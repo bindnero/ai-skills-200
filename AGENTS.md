@@ -4,17 +4,17 @@ Repository instructions for coding agents working **on this skills repository**.
 
 ## What this repo is
 
-A collection of 205 [Agent Skills](https://agentskills.io) bundles plus the tooling that installs them. The bundles are the product; `scripts/` is the plumbing.
+A collection of 210 [Agent Skills](https://agentskills.io) bundles plus the tooling that installs them. The bundles are the product; `scripts/` is the plumbing.
 
 ```
-skills/<category>/<skill-name>/SKILL.md   the 205 bundles — source of truth
+skills/<category>/<skill-name>/SKILL.md   the 210 bundles — source of truth
 scripts/validate.mjs                      enforces the format contract
 scripts/catalog.mjs                       regenerates CATALOG.md + catalog.json
 scripts/docs.mjs                          regenerates docs/02..09
 scripts/install.mjs                       installs bundles into any supported tool
 ```
 
-Categories: `frontend-web` `backend-api` `seo` `uiux-design` `devops-cloud` `testing-quality` `security` `ai-agents` — 25 to 27 skills each.
+Categories: `frontend-web` `backend-api` `seo` `uiux-design` `devops-cloud` `testing-quality` `security` `ai-agents` — 25 to 29 skills each.
 
 ## Before you commit anything
 
@@ -38,7 +38,7 @@ Validation is strict and enforced in CI. `npm run validate` fails on: malformed 
 4. **Descriptions front-load literal keywords** and always carry a trigger clause (`Use when` / `Use before` / `Use after` / `Use for` / `Use at`).
 5. **Every body has all four sections, in order:** `## Instructions`, `## Patterns`, `## Checklist`, `## Anti-patterns`.
 6. **Body length 70-130 lines.** Under is thin, over is context tax.
-7. **Every skill has a "Do not use when" line naming the adjacent skill** that owns the neighbouring case. With 205 candidates this is what stops misfires.
+7. **Every skill has a "Do not use when" line naming the adjacent skill** that owns the neighbouring case. With 210 candidates this is what stops misfires.
 8. **No duplicate descriptions.** Two identical descriptions means one skill never fires.
 
 ## Generated files — do not hand-edit

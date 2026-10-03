@@ -1,6 +1,6 @@
 # ai-skills-200
 
-**205 Agent Skills** for web and app development, SEO, UI/UX, backend, DevOps, testing, security, and AI-agent work — installable into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed, and Codex CLI. Each one is a markdown instruction file an agent reads at the moment it is relevant. Read [What a skill actually is](#what-a-skill-actually-is) before you install.
+**210 Agent Skills** for web and app development, SEO, UI/UX, backend, DevOps, testing, security, and AI-agent work — installable into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed, and Codex CLI. Each one is a markdown instruction file an agent reads at the moment it is relevant. Read [What a skill actually is](#what-a-skill-actually-is) before you install.
 
 Every skill is a portable [Agent Skills](https://agentskills.io) bundle: a folder containing a `SKILL.md` with `name` + `description` frontmatter. No proprietary format, no runtime, no dependencies.
 
@@ -51,7 +51,7 @@ Agent tools all converged on the same idea — a folder with a `SKILL.md` that a
 ```bash
 git clone https://github.com/nerongai/ai-skills-200.git
 cd ai-skills-200
-npm run check          # validate 205 bundles, regenerate the catalog
+npm run check          # validate 210 bundles, regenerate the catalog
 
 # project scope
 node scripts/install.mjs -a -A
@@ -63,7 +63,7 @@ node scripts/install.mjs -a -A -g
 ### Just the ones you need
 
 ```bash
-node scripts/install.mjs --list                       # browse all 205
+node scripts/install.mjs --list                       # browse all 210
 node scripts/install.mjs --search lighthouse           # find by keyword
 node scripts/install.mjs --category seo --all-targets
 node scripts/install.mjs --skill schema-markup,technical-seo-audit -t cursor
@@ -167,7 +167,7 @@ description: What it does and when to trigger, third person, front-loading the k
 
 Only two frontmatter keys — `name` and `description`. That is deliberate: extra keys are tolerated inconsistently across tools, and the `name` must match the folder. Full authoring guide: [docs/11-authoring.md](docs/11-authoring.md).
 
-Then run `npm run check` — the validator enforces frontmatter shape, folder-name match, section order, description quality, and duplicate detection across all 205 bundles.
+Then run `npm run check` — the validator enforces frontmatter shape, folder-name match, section order, description quality, and duplicate detection across all 210 bundles.
 
 ---
 
@@ -199,7 +199,7 @@ Then run `npm run check` — the validator enforces frontmatter shape, folder-na
 | `npm run catalog` | regenerate `CATALOG.md` and `catalog.json` |
 | `npm run check` | validate, then regenerate the catalog |
 | `npm run docs` | regenerate the per-category doc chapters |
-| `npm run install:all-global` | install all 205 to every tool, user scope |
+| `npm run install:all-global` | install all 210 to every tool, user scope |
 
 No dependencies. Node 18+.
 

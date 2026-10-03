@@ -1,6 +1,6 @@
 # Documentation
 
-205 Agent Skills for web and app development, SEO, UI/UX, backend, DevOps, testing, security, and AI-agent work.
+210 Agent Skills for web and app development, SEO, UI/UX, backend, DevOps, testing, security, and AI-agent work.
 
 **[Full index with one-line descriptions](../CATALOG.md)** · **[README](../README.md)** · [Installing](10-install-targets.md) · [Authoring](11-authoring.md)
 
@@ -10,7 +10,7 @@
 | --- | --- |
 | [01 · Getting started](01-getting-started.md) | you want to understand what a skill is and install your first one |
 
-## The 205 skills
+## The 210 skills
 
 | Chapter | Count | Covers |
 | --- | --- | --- |
@@ -37,4 +37,4 @@ At session start the tool loads only each skill's `name` and `description` — n
 
 So every chapter table below reads **"Use it when…"** — that column is not marketing copy. It *is* the mechanism that decides whether that skill loads. The full instructions sit behind it, invisible until matched.
 
-This is also why descriptions in this collection front-load literal keywords like `LCP`, `robots.txt`, `Playwright`, and `Dockerfile` rather than paraphrasing them, and why each skill carries a "Do not use when" boundary pointing at its sibling. With 205 candidates, a description that does not exclude its neighbours will lose to whichever one happens to phrase things more similarly.
+This is also why descriptions in this collection front-load literal keywords like `LCP`, `robots.txt`, `Playwright`, and `Dockerfile` rather than paraphrasing them, and why each skill carries a "Do not use when" boundary pointing at its sibling. With 210 candidates, a description that does not exclude its neighbours will lose to whichever one happens to phrase things more similarly.

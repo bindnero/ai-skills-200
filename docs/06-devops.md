@@ -2,7 +2,7 @@
 
 Getting code into production repeatedly and safely, and then knowing what your systems are doing once they are there.
 
-26 skills. Each row links to the bundle — read it before doing the work it describes.
+27 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Delivery
 
@@ -12,6 +12,7 @@ The path from commit to running process.
 | --- | --- |
 | [`ci-cd-pipelines`](../skills/devops-cloud/ci-cd-pipelines/SKILL.md) | Authors GitHub Actions workflows and GitLab CI pipelines with lockfile caching, matrix builds, OIDC cloud auth, concurrency gates and post-deploy smoke tests. Use when creating or repairing a CI/CD pipeline, adding a deploy stage, or when builds are slow, flaky, or leaking credentials. |
 | [`release-management`](../skills/devops-cloud/release-management/SKILL.md) | Runs a release process with semantic versioning, conventional commits, automated changelog and tag generation, SBOM-attested artifacts and staged promotion. Use when cutting a release, structuring a changelog, or making release metadata traceable to a commit. |
+| [`feature-flag-rollouts`](../skills/devops-cloud/feature-flag-rollouts/SKILL.md) | Ships features behind feature flags with typed definitions, percentage and cohort targeting, kill switches, staleness expiry, and a cleanup discipline so no flag outlives its rollout. Use when decoupling deploy from release, when rolling out to a percentage of users, when designing a kill switch for a risky change, or when auditing flags that are still on after a year. |
 | [`blue-green-deploy`](../skills/devops-cloud/blue-green-deploy/SKILL.md) | Performs zero-downtime blue/green releases on Kubernetes or AWS with weighted traffic shifting, health gates and automated rollback. Use when a change cannot tolerate downtime or when cutover must be instant and reversible. |
 | [`rollback-strategy`](../skills/devops-cloud/rollback-strategy/SKILL.md) | Designs and executes rollbacks with digest pinning, database expand-contract migrations, feature flags, defined triggers and rehearsed automation. Use when a release must be reverted, planning a deploy that can be undone, or deciding whether a rollback is safe. |
 | [`gitops-workflow`](../skills/devops-cloud/gitops-workflow/SKILL.md) | Implements GitOps with Argo CD or Flux, ApplicationSets, Kustomize overlays, sync waves, health checks and progressive sync. Use when adopting pull-based deployment, fixing drift between Git and cluster state, or structuring multi-environment promotion. |

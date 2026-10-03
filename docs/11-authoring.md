@@ -29,7 +29,7 @@ description: What it does and when to trigger it.
 
 ## Writing the description
 
-This is the part that decides whether the skill ever loads. The model sees 205 of these at session start and picks based on nothing else.
+This is the part that decides whether the skill ever loads. The model sees 210 of these at session start and picks based on nothing else.
 
 **State what it does AND when to trigger it.** A description that only says what it does will match almost nothing, because user requests are phrased as tasks, not as topics.
 
@@ -46,7 +46,7 @@ Four rules, in priority order:
 3. **Write in third person.** `Audits...`, not `I help you...` or `Use this skill...`.
 4. **Make them distinct.** Two near-identical descriptions means one of the two skills never fires. The validator rejects exact duplicates; near-duplicates are your job to avoid.
 
-Length: 60-500 characters. Long enough to carry triggers, short enough that 205 of them stay affordable.
+Length: 60-500 characters. Long enough to carry triggers, short enough that 210 of them stay affordable.
 
 ### Use "Use ONLY when"
 
@@ -196,7 +196,7 @@ npm run check
 git commit -am "add <name> skill"
 ```
 
-For a substantial skill, start from the closest existing one in the same category and follow its structure. Consistency across 205 files is worth more than local cleverness — it means the whole collection reads as one authored work.
+For a substantial skill, start from the closest existing one in the same category and follow its structure. Consistency across 210 files is worth more than local cleverness — it means the whole collection reads as one authored work.
 
 ## Test that it fires
 

@@ -2,7 +2,7 @@
 
 Everything that runs in the browser: how CSS is organised, how layouts hold up across breakpoints, how components are structured, how each major framework's idioms work, and how to stop the bundle and the page weight from getting out of hand.
 
-26 skills. Each row links to the bundle — read it before doing the work it describes.
+29 skills. Each row links to the bundle — read it before doing the work it describes.
 
 ## Foundations
 
@@ -12,6 +12,7 @@ How the browser is actually organised into layers, and why the cascade stops bei
 | --- | --- |
 | [`css-architecture`](../skills/frontend-web/css-architecture/SKILL.md) | Restructures tangled stylesheets into predictable cascade layers, scoped component styles, and zero-specificity extension points. Use when CSS specificity wars, `:deep`/global selector bleed, duplicate override blocks, or "why is this heading the wrong size" problems appear, or when migrating a monolithic CSS file to CSS Modules, BEM, or `@layer`. |
 | [`responsive-layouts`](../skills/frontend-web/responsive-layouts/SKILL.md) | Builds fluid, largely breakpoint-free layouts using container queries, `clamp()`, intrinsic sizing, and subgrid. Use when fixing horizontal overflow, squished or non-shrinking flex children, unscalable text, or components that must respond to their container instead of the viewport width. |
+| [`css-container-queries`](../skills/frontend-web/css-container-queries/SKILL.md) | Makes components respond to their own size instead of the viewport using CSS container queries, container-type, container-name, and style queries. Use when a card, sidebar, or widget renders correctly in one slot and breaks in another, when a reusable component hardcodes breakpoint logic, or when viewport media queries cannot express a component-level layout switch. |
 | [`design-tokens`](../skills/frontend-web/design-tokens/SKILL.md) | Defines and pipelines design tokens in the W3C DTCG format into CSS custom properties, Tailwind theme variables, and Figma variables. Use when replacing hardcoded hex values and magic numbers, setting up multi-brand or multi-theme token sets, or syncing tokens between design files and code. |
 | [`dark-mode-theming`](../skills/frontend-web/dark-mode-theming/SKILL.md) | Implements dark mode and multi-theme rendering with `color-scheme`, the CSS `light-dark()` function, semantic tokens, and a flash-free ThemeProvider. Use when adding a dark theme, honouring `prefers-color-scheme`, fixing a white flash on load, or tuning theme colours across native UI. |
 | [`html-semantics`](../skills/frontend-web/html-semantics/SKILL.md) | Replaces ARIA-laden div soup with native HTML — landmarks, heading order, real buttons and lists, label association, and ARIA only where the platform lacks an element. Use when markup is a wall of divs, screen reader output is unusable, or a keyboard user cannot operate a control. |
@@ -27,6 +28,15 @@ Component boundaries, ownership of state, and the framework-specific idioms wort
 | [`forms-validation`](../skills/frontend-web/forms-validation/SKILL.md) | Validates forms with shared Zod schemas, native constraint validation, and accessible error messaging wired through `aria-invalid` and `aria-describedby`. Use when building signup/checkout/settings forms, mirroring validation between client and server, fixing inaccessible or jarring error UX, or hardening input handling. |
 | [`react-performance`](../skills/frontend-web/react-performance/SKILL.md) | Profiles and eliminates wasted React renders with narrow subscriptions, split contexts, memo boundaries, `useDeferredValue`, and Server Components. Use when pages feel sluggish, React DevTools Profiler shows high commit counts, a `memo` fix did not work, or you need to break a render/update waterfall. |
 | [`vue-patterns`](../skills/frontend-web/vue-patterns/SKILL.md) | Applies Vue 3 Composition API conventions — `script setup`, `defineModel`, typed composables, `provide`/`inject` with injection keys, and Pinia setup stores — while avoiding reactivity-destroying destructuring. Use when writing or refactoring `.vue` SFCs, extracting logic into composables, or fixing stale values and re-render churn in Vue apps. |
+
+## TypeScript
+
+Compiler discipline, API design with generics and unions, and failure modelled as a value.
+
+| Skill | Use it when |
+| --- | --- |
+| [`typescript-strict-mode`](../skills/frontend-web/typescript-strict-mode/SKILL.md) | Turns on TypeScript strict-family compiler flags and clears the errors they surface, using tsconfig strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes, and satisfies. Use when migrating a project to strict mode, when implicit any or unchecked index access is hiding bugs, when a large batch of type errors blocks a build, or when deciding which strict flag to adopt next. |
+| [`typescript-generic-patterns`](../skills/frontend-web/typescript-generic-patterns/SKILL.md) | Designs TypeScript APIs with generics, discriminated unions, key remapping, and template literal types so callers keep inference instead of annotating every call. Use when a function or hook is drowning in type parameters, when state needs a discriminated union instead of optional booleans, when writing type-safe config or event maps, or when a prop type grows a fifth boolean flag. |
 
 ## Frameworks
 
