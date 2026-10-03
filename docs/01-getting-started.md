@@ -25,6 +25,8 @@ The body — loaded only after the skill fires.
 
 That's the whole specification. No SDK, no plugin API, no runtime.
 
+**What that means in practice:** a skill is a prompt, not code. Installing one copies a text file — nothing executes, no dependency is added, and your app does not change behaviour on its own. The value comes at the moment the agent loads the file and acts on it. A skill that never triggers, or an agent that ignores its checklist, is worth exactly nothing. Judge these by what your agent does differently, not by how many are installed.
+
 ## Why this works across every tool
 
 Every major coding agent independently arrived at the same design, because it solves the same problem: **200 skill bodies will not fit in a context window, but 200 one-line descriptions will.**

@@ -1,6 +1,6 @@
 # ai-skills-200
 
-**200 production-grade Agent Skills** for web and app development, SEO, UI/UX, backend, DevOps, testing, security, and AI-agent work — installable into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed, and Codex CLI.
+**200 Agent Skills** for web and app development, SEO, UI/UX, backend, DevOps, testing, security, and AI-agent work — installable into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed, and Codex CLI. Each one is a markdown instruction file an agent reads at the moment it is relevant. Read [What a skill actually is](#what-a-skill-actually-is) before you install.
 
 Every skill is a portable [Agent Skills](https://agentskills.io) bundle: a folder containing a `SKILL.md` with `name` + `description` frontmatter. No proprietary format, no runtime, no dependencies.
 
@@ -9,6 +9,20 @@ skills/<category>/<skill-name>/SKILL.md
 ```
 
 MIT licensed. Open source — contributions welcome ([CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md)).
+
+---
+
+## What a skill actually is
+
+A skill is a markdown file of instructions, nothing more. `scripts/install.mjs` copies files into directories — it never executes anything from a bundle.
+
+**These are prompts, not code.** There is no library to import, no API to call, no build step, no runtime. The only files are `SKILL.md` text files.
+
+**Installing them does not make anything faster or better by itself.** Nothing runs at install time and no behaviour changes in your app. What changes is what your AI agent reads.
+
+**The gain comes from the work, not the download.** A skill helps when the agent loads it at the moment it matters and then actually follows it — running the Lighthouse audit, adding the CSP header, writing the load test. A skill nobody triggers, or an agent that ignores it, changes nothing. Results also depend on the model, the tool, and your project.
+
+Judge this repo by what your agent does differently after installing it, not by the skill count.
 
 ---
 
@@ -102,6 +116,8 @@ Full index with one-line descriptions: **[CATALOG.md](CATALOG.md)** · machine-r
 1. **Discovery** — at session start the tool reads every `SKILL.md`'s `name` and `description` into context. Only metadata, not bodies.
 2. **Activation** — the agent semantic-matches your request against those descriptions and loads the full body of anything relevant.
 3. **Execution** — the body is followed as instructions.
+
+No code is invoked at any point. A skill that never gets activated, or an agent that reads the checklist and does not act on it, changes nothing on its own.
 
 This is why `description` quality is the whole ballgame. Descriptions in this repo front-load the literal words a user would type, and every bundle ships a **"Do not use when"** line to stop adjacent skills from firing over each other.
 
