@@ -58,7 +58,7 @@ my-skill/
 ## Install your first skills
 
 ```bash
-git clone https://github.com/nerongai/ai-skills-200
+git clone https://github.com/bindnero/ai-skills-200
 cd ai-skills-200
 ```
 
