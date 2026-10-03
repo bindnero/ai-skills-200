@@ -1,0 +1,22 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Installed skill copies — regenerate with: npm run install:all-global
+.agents/
+.agent/
+.opencode/
+.claude/
+.codex/
+.gemini/
+.cursor/
+.windsurf/
+.zed/
+.clinerules/
+
+# Never commit secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key

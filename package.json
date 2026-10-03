@@ -1,0 +1,47 @@
+{
+  "name": "ai-skills-200",
+  "version": "1.0.0",
+  "description": "200 production-grade Agent Skills for web/app development, SEO, UI/UX, backend, DevOps, testing, security and AI agents. Installs into opencode, Google Antigravity, Claude Code, Cursor, Windsurf, Zed and Codex CLI.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "opencode",
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "windsurf",
+    "zed",
+    "codex",
+    "seo",
+    "uiux",
+    "devops",
+    "security",
+    "skills"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "skills200": "./scripts/install.mjs"
+  },
+  "scripts": {
+    "list": "node scripts/install.mjs --list",
+    "catalog": "node scripts/catalog.mjs",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run validate && npm run catalog",
+    "install:opencode": "node scripts/install.mjs --all-categories --target agents,opencode",
+    "install:antigravity": "node scripts/install.mjs --all-categories --target agents",
+    "install:all-global": "node scripts/install.mjs --all-categories --all-targets --global",
+    "docs": "node scripts/docs.mjs"
+  },
+  "files": [
+    "skills",
+    "scripts",
+    "docs",
+    "CATALOG.md",
+    "catalog.json",
+    "README.md",
+    "LICENSE"
+  ]
+}

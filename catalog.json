@@ -1,0 +1,1333 @@
+{
+  "name": "ai-skills-200",
+  "version": "1.0.0",
+  "total": 200,
+  "standard": "Agent Skills (agentskills.io) — SKILL.md directory bundle",
+  "targets": {
+    "agents": {
+      "path": ".agents/skills/<name>/SKILL.md",
+      "scope": "project",
+      "tools": [
+        "Antigravity",
+        "Antigravity CLI",
+        "opencode (external scan)",
+        "npx skills"
+      ]
+    },
+    "opencode": {
+      "path": ".opencode/skills/<name>/SKILL.md",
+      "scope": "project",
+      "tools": [
+        "opencode"
+      ]
+    },
+    "claude": {
+      "path": ".claude/skills/<name>/SKILL.md",
+      "scope": "project",
+      "tools": [
+        "Claude Code"
+      ]
+    },
+    "gemini": {
+      "path": "~/.gemini/config/skills/<name>/SKILL.md",
+      "scope": "global",
+      "tools": [
+        "Antigravity (global)"
+      ]
+    },
+    "cursor": {
+      "path": ".cursor/rules/<name>.mdc",
+      "scope": "project",
+      "tools": [
+        "Cursor"
+      ]
+    },
+    "windsurf": {
+      "path": ".windsurf/rules/<name>.md",
+      "scope": "project",
+      "tools": [
+        "Windsurf"
+      ]
+    },
+    "zed": {
+      "path": ".zed/rules/<name>.md",
+      "scope": "project",
+      "tools": [
+        "Zed"
+      ]
+    },
+    "codex": {
+      "path": ".codex/skills/<name>/SKILL.md",
+      "scope": "project",
+      "tools": [
+        "Codex CLI"
+      ]
+    }
+  },
+  "categories": [
+    {
+      "id": "ai-agents",
+      "title": "AI & Agents",
+      "blurb": "Prompt and system-prompt design, tool calling, multi-agent orchestration, RAG pipelines, embeddings and chunking, context management, cost control, evaluation, hallucination mitigation, guardrails, prompt injection defense, MCP, and streaming.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "agent-architecture",
+          "description": "Structures LLM agents as a loop of perceive-decide-act-observe with bounded tool budgets, typed state, and explicit termination conditions. Use when deciding whether to build an agent at all, when picking single-agent versus pipeline versus supervisor topologies, or when an agent loops, stalls, or never terminates.",
+          "folder": "agent-architecture",
+          "lines": 124
+        },
+        {
+          "name": "agent-memory-systems",
+          "description": "Implements agent memory across working scratchpads, episodic logs, semantic stores, and retrieval policies with decay and consolidation. Use when an assistant must remember past sessions, when long-term facts need to be recalled accurately, or when stored memories start conflicting.",
+          "folder": "agent-memory-systems",
+          "lines": 120
+        },
+        {
+          "name": "agent-safety-guardrails",
+          "description": "Constrains agent behaviour with layered input, output, tool, and action guardrails plus refusal and escalation policies. Use when an agent touches production data, money, or external systems, when defining what the agent must refuse, or when compliance requires auditable controls.",
+          "folder": "agent-safety-guardrails",
+          "lines": 118
+        },
+        {
+          "name": "agent-skill-authoring",
+          "description": "Authors agent skills with progressive disclosure using SKILL.md frontmatter, layered references, and trigger-precise descriptions. Use when writing or editing a SKILL.md for an agent, when a skill never triggers, or when skills bloat context.",
+          "folder": "agent-skill-authoring",
+          "lines": 108
+        },
+        {
+          "name": "autonomous-agent-workflows",
+          "description": "Runs long-horizon agents with durable queues, resumable checkpoints, retry and backoff policy, budget ceilings, and idempotent side effects. Use when building agents that work for hours across many steps, or when long-running jobs must survive restarts without duplicating work.",
+          "folder": "autonomous-agent-workflows",
+          "lines": 125
+        },
+        {
+          "name": "chunking-strategies",
+          "description": "Splits documents into retrievable units using structure-aware, semantic, and late-chunking methods with tuned size and overlap. Use when setting chunk size or overlap, when a chunk starts mid-argument, or when retrieval returns fragments that lose context.",
+          "folder": "chunking-strategies",
+          "lines": 127
+        },
+        {
+          "name": "context-window-management",
+          "description": "Budgets and prunes agent context using compaction, structured note-taking, retrieval-on-demand, and turn summarization with token accounting. Use when context grows too large to fit, when performance degrades mid-conversation, or when \"lost in the middle\" recall failures appear.",
+          "folder": "context-window-management",
+          "lines": 116
+        },
+        {
+          "name": "embedding-strategies",
+          "description": "Selects and operates embedding models covering dimension choice, Matryoshka truncation, domain fine-tuning, batch throughput, and embedding-drift monitoring. Use when choosing a vector model, when chunk vectors need rebuilding after a model change, or when similarity scores stop discriminating.",
+          "folder": "embedding-strategies",
+          "lines": 114
+        },
+        {
+          "name": "function-schema-design",
+          "description": "Designs function and tool schemas with descriptive naming, flat typed parameters, enums, defaults, and token-lean definitions. Use when authoring API tool definitions for an agent, when a tool is mis-selected, or when the tool list is inflating prompt tokens.",
+          "folder": "function-schema-design",
+          "lines": 125
+        },
+        {
+          "name": "hallucination-mitigation",
+          "description": "Reduces fabricated facts with grounded citation requirements, abstention policies, retrieval-backed verification, and confidence-aware routing. Use when agents invent citations, cite documents that do not exist, or state facts with no basis in the source material.",
+          "folder": "hallucination-mitigation",
+          "lines": 122
+        },
+        {
+          "name": "human-in-the-loop-workflows",
+          "description": "Designs approval gates, confidence thresholds, edit-and-resume handoffs, and durable pause states for agent actions. Use when an agent must stop for approval before acting, when confidence-based auto-execution is needed, or when human edits must be reflected back into agent state.",
+          "folder": "human-in-the-loop-workflows",
+          "lines": 120
+        },
+        {
+          "name": "llm-cost-optimization",
+          "description": "Reduces LLM spend with prompt caching, model routing by difficulty, batch APIs, quantization, and per-workload budget accounting. Use when inference cost or latency breaches budget, or when planning spend for a production agent workload.",
+          "folder": "llm-cost-optimization",
+          "lines": 113
+        },
+        {
+          "name": "llm-debugging",
+          "description": "Diagnoses LLM failures by capturing full traces, classifying failure modes, bisecting prompt and model changes, and inspecting token and tool-call state. Use when output quality drops unexpectedly, when agents loop or stall, or when a regression appears after a model or prompt change.",
+          "folder": "llm-debugging",
+          "lines": 117
+        },
+        {
+          "name": "llm-evaluation",
+          "description": "Builds and runs LLM eval suites with graded rubrics, pairwise model-graded comparison, deterministic graders, and statistical significance checks. Use when changing a model, prompt, or retrieval setup and needing evidence it helped, or when quality has regressed in production.",
+          "folder": "llm-evaluation",
+          "lines": 118
+        },
+        {
+          "name": "mcp-server-design",
+          "description": "Builds Model Context Protocol servers exposing typed tools, resources, and prompts with stdio or HTTP transport and session handling. Use when publishing tools to MCP clients, when debugging capability negotiation, or when exposing internal APIs to an agent runtime.",
+          "folder": "mcp-server-design",
+          "lines": 127
+        },
+        {
+          "name": "model-selection-strategy",
+          "description": "Selects and routes between frontier, mid-tier, small, and specialized models using capability tiers, eval-driven benchmarks, latency budgets, and fallback chains. Use when choosing a model for a workload, when a model upgrade is proposed, or when building a multi-model routing strategy.",
+          "folder": "model-selection-strategy",
+          "lines": 120
+        },
+        {
+          "name": "multi-agent-orchestration",
+          "description": "Coordinates teams of specialized agents with supervisor routing, blackboard shared state, handoff protocols, and per-agent concurrency limits. Use when one agent cannot hold every tool and policy, when splitting work across domain specialists, or when sub-agents conflict or duplicate effort.",
+          "folder": "multi-agent-orchestration",
+          "lines": 114
+        },
+        {
+          "name": "prompt-engineering",
+          "description": "Crafts and iterates production prompts with few-shot examples, CoT/ToT reasoning scaffolds, XML or delimiter-based structure, and token-level diffing. Use when a prompt underperforms, when output format or instruction-following drifts, or when you need to A/B test prompt variants against an eval set.",
+          "folder": "prompt-engineering",
+          "lines": 126
+        },
+        {
+          "name": "prompt-injection-defense",
+          "description": "Defends LLM agents against prompt injection from web pages, retrieved documents, tool output, and files using taint tracking, trust separation, and output validation. Use when agents browse or read user-supplied content, when indirect injection payloads are suspected, or when designing untrusted-content pipelines.",
+          "folder": "prompt-injection-defense",
+          "lines": 123
+        },
+        {
+          "name": "rag-pipeline-design",
+          "description": "Builds retrieval-augmented generation pipelines covering ingestion, query rewriting, hybrid search, reranking, and grounded answer generation with citations. Use when building a knowledge-base chatbot, connecting a LLM to private documents, or diagnosing answers that miss or fabricate document content.",
+          "folder": "rag-pipeline-design",
+          "lines": 125
+        },
+        {
+          "name": "streaming-ui-patterns",
+          "description": "Implements LLM streaming in interfaces using SSE, partial JSON rendering, tool-call streaming, cancellation, and reconnectable streams. Use when building chat or agent interfaces, when showing incremental output, or when streams disconnect mid-response.",
+          "folder": "streaming-ui-patterns",
+          "lines": 127
+        },
+        {
+          "name": "structured-output-enforcement",
+          "description": "Forces machine-parseable LLM output via strict JSON Schema, constrained decoding, grammar constraints, and repair loops. Use when output must be parsed by code without failure, when building agent actions as structured objects, or when JSON parsing breaks intermittently.",
+          "folder": "structured-output-enforcement",
+          "lines": 127
+        },
+        {
+          "name": "system-prompt-design",
+          "description": "Authors durable system prompts as structured operating manuals with precedence-ordered rules, identity blocks, tool policy sections, and output contracts. Use when creating a new production system prompt, when editing an agent's persona or tool-use policy, or when system prompt rules are being silently ignored.",
+          "folder": "system-prompt-design",
+          "lines": 112
+        },
+        {
+          "name": "tool-calling-design",
+          "description": "Builds tool definitions and execution loops with strict JSON Schema parameters, parallel-call batching, typed results, and tool-result truncation. Use when wiring an agent to external APIs, when tools are called wrongly or not at all, or when you need to reduce round trips per task.",
+          "folder": "tool-calling-design",
+          "lines": 125
+        },
+        {
+          "name": "vector-index-selection",
+          "description": "Chooses and operates vector search indexes across HNSW, IVF-PQ, disk-backed, and managed services, tuning ef_search, nprobe, filters, and recall-latency tradeoffs. Use when picking a vector database, when p99 search latency misses target, or when filtered search returns fewer results than expected.",
+          "folder": "vector-index-selection",
+          "lines": 123
+        }
+      ]
+    },
+    {
+      "id": "backend-api",
+      "title": "Backend & API Engineering",
+      "blurb": "REST / GraphQL / gRPC service design, WebSockets, versioning, rate limiting, pagination, idempotency, validation, error contracts, auth flows, jobs, queues, caching, and database work.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "api-documentation",
+          "description": "Produces accurate OpenAPI specs and runnable documentation with typed clients generated from the contract. Use when writing or updating an OpenAPI document, adding endpoint examples, or publishing an SDK reference.",
+          "folder": "api-documentation",
+          "lines": 133
+        },
+        {
+          "name": "api-versioning",
+          "description": "Evolves public HTTP APIs with URL or header versioning, additive-change discipline, and a dated deprecation runway. Use when shipping a breaking change to a live endpoint or retiring an old version safely.",
+          "folder": "api-versioning",
+          "lines": 111
+        },
+        {
+          "name": "auth-token-lifecycle",
+          "description": "Issues, rotates, refreshes, and revokes access and refresh tokens with reuse detection and server-side allowlists. Use when designing login flows, token expiry, or logout that must actually invalidate access.",
+          "folder": "auth-token-lifecycle",
+          "lines": 106
+        },
+        {
+          "name": "background-jobs",
+          "description": "Runs slow or retrying work outside the request cycle with a durable queue, idempotent handlers, and exponential backoff. Use when responding fast matters but the work needs retries, scheduling, or fan-out.",
+          "folder": "background-jobs",
+          "lines": 123
+        },
+        {
+          "name": "caching-strategies",
+          "description": "Caches database and HTTP responses with correct invalidation, stampede protection, and bounded TTLs. Use when the same expensive read is repeated and stale data is tolerable for a bounded window.",
+          "folder": "caching-strategies",
+          "lines": 116
+        },
+        {
+          "name": "connection-pooling",
+          "description": "Sizes and bounds database and HTTP client pools so concurrency stays under what the datastore can serve. Use when adding a datastore client, raising concurrency, or diagnosing pool timeouts and saturation.",
+          "folder": "connection-pooling",
+          "lines": 118
+        },
+        {
+          "name": "database-migrations",
+          "description": "Ships reversible expand-and-contract schema changes with online DDL and deployment-safe sequencing. Use when adding, renaming, or dropping columns, indexes, or tables in a live database.",
+          "folder": "database-migrations",
+          "lines": 133
+        },
+        {
+          "name": "error-contract-design",
+          "description": "Defines stable machine-readable error codes with a Problem Details envelope and correct HTTP status mapping. Use when designing error responses, adding error types, or making failures programmatically distinguishable.",
+          "folder": "error-contract-design",
+          "lines": 150
+        },
+        {
+          "name": "event-driven-architecture",
+          "description": "Decouples services with a transactional outbox, sagas, and idempotent consumers over a durable event log. Use when splitting a monolith, introducing asynchronous workflows, or coordinating multi-service transactions.",
+          "folder": "event-driven-architecture",
+          "lines": 170
+        },
+        {
+          "name": "file-upload-handling",
+          "description": "Handles multipart and direct-to-object-storage uploads with presigned URLs, streaming MIME checks, and malware scanning. Use when adding file upload endpoints, image processing, or attachment handling to an API.",
+          "folder": "file-upload-handling",
+          "lines": 166
+        },
+        {
+          "name": "graphql-performance",
+          "description": "Optimizes GraphQL execution with DataLoader batching, query depth and cost limits, and response caching. Use when a GraphQL endpoint is slow, over-fetches, or needs protection against abusive queries.",
+          "folder": "graphql-performance",
+          "lines": 191
+        },
+        {
+          "name": "graphql-schema-design",
+          "description": "Designs GraphQL SDL schemas with sound nullability, non-null propagation rules, and query-root ergonomics. Use when creating or refactoring a `.graphql` schema, defining object and input types, or deciding mutation and error contracts.",
+          "folder": "graphql-schema-design",
+          "lines": 127
+        },
+        {
+          "name": "grpc-service-design",
+          "description": "Designs protobuf service definitions with field-number-safe evolution, deadlines, and status codes. Use when defining or reviewing a `.proto` file, generated gRPC stubs, or the request/response contract between internal services.",
+          "folder": "grpc-service-design",
+          "lines": 131
+        },
+        {
+          "name": "idempotency-keys",
+          "description": "Makes HTTP writes safely retryable using an `Idempotency-Key` header, request fingerprinting, and atomic replay storage. Use when implementing POST handlers for payments, orders, or any endpoint clients will retry after a timeout.",
+          "folder": "idempotency-keys",
+          "lines": 168
+        },
+        {
+          "name": "input-validation",
+          "description": "Validates and coerces untrusted API input with schema libraries, typed errors, and size limits enforced before parsing. Use when adding request validation to endpoints, hardening parsers, or turning untyped bodies into TypeScript types.",
+          "folder": "input-validation",
+          "lines": 137
+        },
+        {
+          "name": "microservices-boundaries",
+          "description": "Draws service boundaries by business capability with exclusive data ownership and no cross-service SQL. Use when splitting a monolith, assigning table ownership, or removing cross-service database reads.",
+          "folder": "microservices-boundaries",
+          "lines": 141
+        },
+        {
+          "name": "oauth2-integration",
+          "description": "Implements OAuth 2.0 authorization-code-with-PKCE and client-credentials flows against external identity providers. Use when adding sign-in-with-provider, machine-to-machine tokens, or upstream token introspection.",
+          "folder": "oauth2-integration",
+          "lines": 174
+        },
+        {
+          "name": "pagination-patterns",
+          "description": "Implements offset, keyset, and cursor pagination with stable sort orders and jump-pagination paths. Use when adding list endpoints, fixing duplicated or skipped rows across pages, or solving deep-paging performance problems.",
+          "folder": "pagination-patterns",
+          "lines": 125
+        },
+        {
+          "name": "query-optimization",
+          "description": "Diagnoses slow SQL with EXPLAIN ANALYZE, fixes N+1 access patterns, and tunes indexes and statistics. Use when a query is slow, database CPU is high, or an endpoint exceeds its latency budget.",
+          "folder": "query-optimization",
+          "lines": 120
+        },
+        {
+          "name": "queue-design",
+          "description": "Designs message broker topology with topic and partition strategy, consumer groups, delivery guarantees, and dead-letter handling. Use when selecting or configuring SQS, Kafka, RabbitMQ, or BullMQ for inter-service messaging.",
+          "folder": "queue-design",
+          "lines": 164
+        },
+        {
+          "name": "rate-limiting",
+          "description": "Enforces request quotas with token-bucket and sliding-window limiters, tiering, and standards-compliant headers. Use when protecting an endpoint from abuse, adding per-tenant quotas, or diagnosing unexpected 429 responses.",
+          "folder": "rate-limiting",
+          "lines": 143
+        },
+        {
+          "name": "rest-api-design",
+          "description": "Designs resource-oriented HTTP endpoints with correct method semantics, status codes, and un-enveloped response bodies. Use when creating or reviewing REST routes, controllers, or OpenAPI specs where URL layout and verb choice are being decided.",
+          "folder": "rest-api-design",
+          "lines": 90
+        },
+        {
+          "name": "session-management",
+          "description": "Manages server-side browser sessions with secure cookies, idle and absolute timeouts, and fixation-safe rotation. Use when implementing login and logout, cookie policy, concurrent session limits, or per-request session lookup.",
+          "folder": "session-management",
+          "lines": 173
+        },
+        {
+          "name": "webhook-delivery",
+          "description": "Delivers outbound webhooks with signed payloads, exponential-backoff retries, and replayable delivery logs. Use when notifying external systems of changes, or implementing a webhook receiver.",
+          "folder": "webhook-delivery",
+          "lines": 191
+        },
+        {
+          "name": "websocket-realtime",
+          "description": "Builds resilient WebSocket servers with heartbeat liveness, backpressure handling, and Redis-backed fan-out. Use when adding live updates, presence, or subscriptions over a persistent connection rather than polling.",
+          "folder": "websocket-realtime",
+          "lines": 165
+        }
+      ]
+    },
+    {
+      "id": "devops-cloud",
+      "title": "DevOps & Cloud",
+      "blurb": "CI/CD pipelines, container hardening, Kubernetes and Helm, Terraform modules, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE and SLOs, GitOps, secrets, releases, rollback, backups, and cost control.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "aws-deployment",
+          "description": "Deploys services on AWS using ECS/Fargate, EKS, Lambda and App Runner with least-privilege IAM, OIDC CI auth, multi-AZ ALB targets and long deregistration delays. Use when shipping to AWS, sizing an ECS task, or fixing target health, draining or IAM permission errors.",
+          "folder": "aws-deployment",
+          "lines": 129
+        },
+        {
+          "name": "backup-and-restore",
+          "description": "Designs backups with RPO/RTO targets, point-in-time database recovery, object versioning with lock, cross-account copies and rehearsed restore drills. Use when defining a backup strategy, enabling point-in-time recovery, or proving a restore actually works.",
+          "folder": "backup-and-restore",
+          "lines": 130
+        },
+        {
+          "name": "blue-green-deploy",
+          "description": "Performs zero-downtime blue/green releases on Kubernetes or AWS with weighted traffic shifting, health gates and automated rollback. Use when a change cannot tolerate downtime or when cutover must be instant and reversible.",
+          "folder": "blue-green-deploy",
+          "lines": 141
+        },
+        {
+          "name": "ci-cd-pipelines",
+          "description": "Authors GitHub Actions workflows and GitLab CI pipelines with lockfile caching, matrix builds, OIDC cloud auth, concurrency gates and post-deploy smoke tests. Use when creating or repairing a CI/CD pipeline, adding a deploy stage, or when builds are slow, flaky, or leaking credentials.",
+          "folder": "ci-cd-pipelines",
+          "lines": 117
+        },
+        {
+          "name": "cloudflare-edge",
+          "description": "Configures Cloudflare Workers, KV, R2, D1 and Pages with wrangler.jsonc, Cache Rules and WAF rules tuned at the edge. Use when moving a service onto Cloudflare, adding edge compute or storage bindings, or fixing cache and WAF behaviour at the CDN layer.",
+          "folder": "cloudflare-edge",
+          "lines": 125
+        },
+        {
+          "name": "cost-optimization",
+          "description": "Reduces infrastructure spend through Kubernetes rightsizing, spot capacity, savings plans, storage tiering, NAT and logging controls, and tag-based attribution. Use when a cloud bill is growing unexpectedly, rightsizing containers, or adding cost tags and unit-economics reporting.",
+          "folder": "cost-optimization",
+          "lines": 126
+        },
+        {
+          "name": "distributed-tracing",
+          "description": "Instruments distributed traces with OpenTelemetry spans, W3C trace context propagation, span links for asynchronous work and controlled sampling. Use when adding tracing to a service, debugging latency across service or queue boundaries, or when traces are missing hops.",
+          "folder": "distributed-tracing",
+          "lines": 114
+        },
+        {
+          "name": "docker-image-hardening",
+          "description": "Hardens container images with multi-stage builds, non-root users, distroless or scratch bases, BuildKit secret mounts and SBOM/CVE scanning. Use when writing or shrinking a Dockerfile, fixing a failing image build, or clearing Trivy/Grype CVE findings on a pushed image.",
+          "folder": "docker-image-hardening",
+          "lines": 122
+        },
+        {
+          "name": "edge-caching-strategy",
+          "description": "Designs HTTP caching with Cache-Control, Vary, CDN stale-while-revalidate, surrogate keys and cache invalidation webhooks. Use when tuning CDN or browser cache headers, reducing origin load, or fixing stale or leaking content at the edge.",
+          "folder": "edge-caching-strategy",
+          "lines": 147
+        },
+        {
+          "name": "gcp-deployment",
+          "description": "Deploys services to Google Cloud with Cloud Run revisions and traffic splitting, GKE, Artifact Registry and Workload Identity Federation. Use when shipping to GCP, tuning Cloud Run concurrency and min-instances, or fixing CI auth and organization-policy errors.",
+          "folder": "gcp-deployment",
+          "lines": 123
+        },
+        {
+          "name": "gitops-workflow",
+          "description": "Implements GitOps with Argo CD or Flux, ApplicationSets, Kustomize overlays, sync waves, health checks and progressive sync. Use when adopting pull-based deployment, fixing drift between Git and cluster state, or structuring multi-environment promotion.",
+          "folder": "gitops-workflow",
+          "lines": 128
+        },
+        {
+          "name": "helm-chart-authoring",
+          "description": "Builds and debugs Helm 3 charts including Chart.yaml, typed values.schema.json, named templates in _helpers.tpl, subchart dependencies, hooks and helm-unittest suites. Use when packaging a service for helm install or helm upgrade, templating values, or fixing a chart that fails helm lint or renders empty manifests.",
+          "folder": "helm-chart-authoring",
+          "lines": 157
+        },
+        {
+          "name": "incident-response",
+          "description": "Runs production incident response with severity definitions, incident commander roles, runbook-driven mitigation, stakeholder comms and blameless postmortems. Use when responding to an outage, defining an on-call process, or writing a post-incident review.",
+          "folder": "incident-response",
+          "lines": 130
+        },
+        {
+          "name": "infrastructure-testing",
+          "description": "Tests infrastructure as code with Terratest, Checkov, Trivy, tfsec, kubeconform and OPA policy gates plus per-plan cost assertions. Use when adding automated tests to Terraform or Kubernetes changes, or when preventing insecure infrastructure from merging.",
+          "folder": "infrastructure-testing",
+          "lines": 132
+        },
+        {
+          "name": "kubernetes-manifests",
+          "description": "Authors raw Kubernetes Deployments, Services, probes, resource limits, PodDisruptionBudgets and topology spread constraints, plus kustomize overlays. Use when writing or debugging YAML for kubectl apply, when a pod is CrashLoopBackOff or Pending, or when replacing a Helm chart with plain manifests.",
+          "folder": "kubernetes-manifests",
+          "lines": 166
+        },
+        {
+          "name": "metrics-and-alerting",
+          "description": "Defines Prometheus metrics with the RED method, controls cardinality, and writes recording and multi-window multi-burn-rate alerting rules. Use when adding a metric, tuning an SLO alert, or when Prometheus is high-cardinality, expensive, or paging on noise.",
+          "folder": "metrics-and-alerting",
+          "lines": 126
+        },
+        {
+          "name": "observability-setup",
+          "description": "Wires end-to-end observability with OpenTelemetry auto-instrumentation, a Collector, Prometheus, Grafana, Loki and Tempo plus real health endpoints. Use when adding telemetry to a service, standing up a metrics/log/trace pipeline, or turning on readiness and liveness probes.",
+          "folder": "observability-setup",
+          "lines": 140
+        },
+        {
+          "name": "release-management",
+          "description": "Runs a release process with semantic versioning, conventional commits, automated changelog and tag generation, SBOM-attested artifacts and staged promotion. Use when cutting a release, structuring a changelog, or making release metadata traceable to a commit.",
+          "folder": "release-management",
+          "lines": 110
+        },
+        {
+          "name": "rollback-strategy",
+          "description": "Designs and executes rollbacks with digest pinning, database expand-contract migrations, feature flags, defined triggers and rehearsed automation. Use when a release must be reverted, planning a deploy that can be undone, or deciding whether a rollback is safe.",
+          "folder": "rollback-strategy",
+          "lines": 120
+        },
+        {
+          "name": "secrets-management",
+          "description": "Manages secrets with Vault or cloud secret managers, SOPS encryption for Git, External Secrets Operator, KMS envelope encryption and automated rotation. Use when moving credentials out of environment files, rotating leaked keys, or wiring Vault into a cluster.",
+          "folder": "secrets-management",
+          "lines": 152
+        },
+        {
+          "name": "serverless-functions",
+          "description": "Designs and hardens AWS Lambda and Cloud Run functions with idempotency keys, SQS partial batch failure handling, reserved concurrency, DLQs and cold-start mitigation. Use when writing a serverless handler, processing an event stream, or debugging timeouts and duplicate invocations.",
+          "folder": "serverless-functions",
+          "lines": 116
+        },
+        {
+          "name": "sre-slos",
+          "description": "Defines service-level indicators and objectives as code, derives error budgets and burn-rate policies, and wires budget exhaustion into release decisions. Use when writing an SLO, agreeing a reliability target, or connecting error budgets to deploy gates.",
+          "folder": "sre-slos",
+          "lines": 110
+        },
+        {
+          "name": "structured-logging",
+          "description": "Emits machine-parseable JSON logs conforming to the OpenTelemetry log data model with correlation IDs, level discipline, redaction and sampling. Use when replacing print statements with real logs, correlating logs with traces, or a log pipeline is failing to ingest or leak secrets.",
+          "folder": "structured-logging",
+          "lines": 128
+        },
+        {
+          "name": "terraform-modules",
+          "description": "Authors reusable Terraform 1.9+ modules with typed variables, count and for_each, moved blocks, check blocks and Terratest suites. Use when extracting infrastructure into a versioned module, fixing state coupling, or passing plan-time assertions.",
+          "folder": "terraform-modules",
+          "lines": 125
+        },
+        {
+          "name": "vercel-deployment",
+          "description": "Configures Vercel projects with vercel.json, monorepo root directories, function memory and regions, preview environments, cron jobs and security headers. Use when setting up or debugging a Vercel build, fixing a no-Output-Directory error, or cutting edge cold starts.",
+          "folder": "vercel-deployment",
+          "lines": 127
+        }
+      ]
+    },
+    {
+      "id": "frontend-web",
+      "title": "Frontend & Web Development",
+      "blurb": "CSS architecture, layout systems, design tokens, framework patterns (React / Vue / Svelte / Next / Astro), Tailwind, asset loading, PWA, i18n, and bundle performance.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "astro-static-sites",
+          "description": "Builds content-driven sites with Astro using islands with the right client directive, typed content collections, `getStaticPaths`, prerendering, and `astro:assets`. Use when marketing sites, docs, or blogs feel slow, when shipping too much JS, or when adding Markdown/MDX content with schemas.",
+          "folder": "astro-static-sites",
+          "lines": 113
+        },
+        {
+          "name": "browser-storage-apis",
+          "description": "Persists client state safely with `localStorage`, `sessionStorage`, IndexedDB, and the Origin Private File System, including quota handling, eviction behaviour, and cross-tab sync. Use when caching data offline, saving drafts, or debugging `QuotaExceededError` and storage eviction.",
+          "folder": "browser-storage-apis",
+          "lines": 126
+        },
+        {
+          "name": "bundle-size-triage",
+          "description": "Finds and removes JavaScript weight by analysing production build stats, tracing duplicated dependencies, and eliminating barrel-file imports. Use when the bundle grows unexpectedly, when CI fails a size budget, or when a dependency upgrade adds hundreds of kilobytes.",
+          "folder": "bundle-size-triage",
+          "lines": 115
+        },
+        {
+          "name": "component-library-authoring",
+          "description": "Authors reusable UI library components with typed props, controlled/uncontrolled parity, compound-part APIs, and Storybook plus accessibility coverage. Use when building or refactoring a design-system component, designing a Button/Dialog/Tabs public API, or shipping a component for multiple consuming apps.",
+          "folder": "component-library-authoring",
+          "lines": 119
+        },
+        {
+          "name": "critical-css",
+          "description": "Inlines above-the-fold CSS and defers the rest so first paint stops waiting on render-blocking stylesheets. Use when FCP/LCP are delayed by CSS, when `@import` chains appear in the Network panel, or when a large global stylesheet blocks rendering.",
+          "folder": "critical-css",
+          "lines": 100
+        },
+        {
+          "name": "css-animations",
+          "description": "Animates interfaces with compositor-friendly properties, `prefers-reduced-motion` fallbacks, View Transitions, and scroll-driven animations. Use when adding motion to dialogs, lists, page navigations, or progress indicators, or when fixing janky animations and users reporting motion sickness.",
+          "folder": "css-animations",
+          "lines": 122
+        },
+        {
+          "name": "css-architecture",
+          "description": "Restructures tangled stylesheets into predictable cascade layers, scoped component styles, and zero-specificity extension points. Use when CSS specificity wars, `:deep`/global selector bleed, duplicate override blocks, or \"why is this heading the wrong size\" problems appear, or when migrating a monolithic CSS file to CSS Modules, BEM, or `@layer`.",
+          "folder": "css-architecture",
+          "lines": 114
+        },
+        {
+          "name": "dark-mode-theming",
+          "description": "Implements dark mode and multi-theme rendering with `color-scheme`, the CSS `light-dark()` function, semantic tokens, and a flash-free ThemeProvider. Use when adding a dark theme, honouring `prefers-color-scheme`, fixing a white flash on load, or tuning theme colours across native UI.",
+          "folder": "dark-mode-theming",
+          "lines": 121
+        },
+        {
+          "name": "design-tokens",
+          "description": "Defines and pipelines design tokens in the W3C DTCG format into CSS custom properties, Tailwind theme variables, and Figma variables. Use when replacing hardcoded hex values and magic numbers, setting up multi-brand or multi-theme token sets, or syncing tokens between design files and code.",
+          "folder": "design-tokens",
+          "lines": 126
+        },
+        {
+          "name": "font-loading",
+          "description": "Loads web fonts without invisible text or layout shift using `font-display`, metric-compatible fallbacks (`size-adjust`, `ascent-override`), `preload`, and subsetting. Use when text flashes invisible (FOIT), reflows when fonts arrive (FOUT), or a font request delays LCP.",
+          "folder": "font-loading",
+          "lines": 99
+        },
+        {
+          "name": "forms-validation",
+          "description": "Validates forms with shared Zod schemas, native constraint validation, and accessible error messaging wired through `aria-invalid` and `aria-describedby`. Use when building signup/checkout/settings forms, mirroring validation between client and server, fixing inaccessible or jarring error UX, or hardening input handling.",
+          "folder": "forms-validation",
+          "lines": 126
+        },
+        {
+          "name": "html-semantics",
+          "description": "Replaces ARIA-laden div soup with native HTML — landmarks, heading order, real buttons and lists, label association, and ARIA only where the platform lacks an element. Use when markup is a wall of divs, screen reader output is unusable, or a keyboard user cannot operate a control.",
+          "folder": "html-semantics",
+          "lines": 120
+        },
+        {
+          "name": "i18n-implementation",
+          "description": "Localises interfaces with ICU MessageFormat plurals, `Intl` APIs for dates/numbers/relative time, typed message keys, locale routing with `hreflang`, and RTL support. Use when extracting hardcoded strings, adding a language switcher, or fixing broken plurals, date formats, and RTL layouts.",
+          "folder": "i18n-implementation",
+          "lines": 122
+        },
+        {
+          "name": "image-optimization",
+          "description": "Delivers correctly sized, correctly prioritised images using `srcset`/`sizes`, `<picture>` art direction, AVIF/WebP, explicit dimensions to prevent CLS, and LCP-aware `fetchpriority`. Use when images dominate page weight, LCP is an image, or layouts shift when pictures load.",
+          "folder": "image-optimization",
+          "lines": 126
+        },
+        {
+          "name": "lazy-loading-strategies",
+          "description": "Splits and defers JavaScript and media with `import()`, `React.lazy`/Suspense, route-level chunking, `IntersectionObserver`, and `content-visibility`. Use when the initial bundle is too large, below-the-fold widgets hydrate needlessly, or embeds and third-party scripts slow first interaction.",
+          "folder": "lazy-loading-strategies",
+          "lines": 118
+        },
+        {
+          "name": "nextjs-app-router",
+          "description": "Implements Next.js App Router correctly — Server Components, async request APIs, Server Actions with revalidation, streaming Suspense, route handlers, and metadata. Use when building routes under `app/`, fixing stale cached pages after mutations, or eliminating server/client waterfalls and `\"use client\"` overuse.",
+          "folder": "nextjs-app-router",
+          "lines": 114
+        },
+        {
+          "name": "react-performance",
+          "description": "Profiles and eliminates wasted React renders with narrow subscriptions, split contexts, memo boundaries, `useDeferredValue`, and Server Components. Use when pages feel sluggish, React DevTools Profiler shows high commit counts, a `memo` fix did not work, or you need to break a render/update waterfall.",
+          "folder": "react-performance",
+          "lines": 125
+        },
+        {
+          "name": "responsive-layouts",
+          "description": "Builds fluid, largely breakpoint-free layouts using container queries, `clamp()`, intrinsic sizing, and subgrid. Use when fixing horizontal overflow, squished or non-shrinking flex children, unscalable text, or components that must respond to their container instead of the viewport width.",
+          "folder": "responsive-layouts",
+          "lines": 119
+        },
+        {
+          "name": "service-worker-pwa",
+          "description": "Ships an installable, offline-capable PWA with a Workbox service worker — precaching, per-route caching strategies, update prompts, and background sync. Use when adding offline support, an install prompt, push notifications, or when a service worker is serving stale content.",
+          "folder": "service-worker-pwa",
+          "lines": 123
+        },
+        {
+          "name": "state-management",
+          "description": "Decides where each piece of state belongs — component, URL, server cache, form, or global store — and implements it with narrow Zustand selectors, split contexts, or XState machines. Use when choosing between useState/context/store, fixing whole-tree re-renders from a wide context, or modelling multi-step and async workflows.",
+          "folder": "state-management",
+          "lines": 118
+        },
+        {
+          "name": "svelte-kit-patterns",
+          "description": "Applies SvelteKit 2 and Svelte 5 conventions — universal versus server `load` functions, streamed promises, form actions with `use:enhance`, `hooks.server.ts`, and runes. Use when building SvelteKit routes, mutating data from the client, or fixing double-fetching and layout data loss between navigations.",
+          "folder": "svelte-kit-patterns",
+          "lines": 126
+        },
+        {
+          "name": "tailwind-architecture",
+          "description": "Structures Tailwind CSS v4 projects using CSS-first configuration with `@theme`, `@layer`, `@custom-variant`, and `@utility` instead of a sprawling `tailwind.config.js`. Use when setting up Tailwind v4, wiring design tokens into utilities, adding container-query or dark-mode variants, or stopping utility sprawl in component markup.",
+          "folder": "tailwind-architecture",
+          "lines": 125
+        },
+        {
+          "name": "vue-patterns",
+          "description": "Applies Vue 3 Composition API conventions — `script setup`, `defineModel`, typed composables, `provide`/`inject` with injection keys, and Pinia setup stores — while avoiding reactivity-destroying destructuring. Use when writing or refactoring `.vue` SFCs, extracting logic into composables, or fixing stale values and re-render churn in Vue apps.",
+          "folder": "vue-patterns",
+          "lines": 126
+        },
+        {
+          "name": "web-components",
+          "description": "Builds platform custom elements with Shadow DOM, constructable stylesheets, slots, form participation via `ElementInternals`, and Lit. Use when shipping framework-agnostic widgets, embedding a design-system component in a non-React host, or migrating a legacy web component.",
+          "folder": "web-components",
+          "lines": 126
+        },
+        {
+          "name": "web-vitals-remediation",
+          "description": "Diagnoses and fixes LCP, INP, and CLS regressions using the `web-vitals` attribution build, real-user monitoring, and field-versus-lab comparison. Use when Core Web Vitals scores drop, Lighthouse flags LCP/CLS/TBT, or users report a page that \"feels slow\" to interact with.",
+          "folder": "web-vitals-remediation",
+          "lines": 104
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "blurb": "Threat modeling, OWASP classes, injection defenses, authn / authz, secure headers and CSP, encryption, password and MFA handling, secrets, supply chain, signing, SAST, penetration testing, forensics, privacy, and GDPR.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "api-key-management",
+          "description": "Issues, scopes, stores, and revokes machine credentials using hashed tokens with environment separation and automated rotation. Use when designing API authentication for clients or services, adding key creation and rotation, reviewing key handling in code, or responding to a leaked key.",
+          "folder": "api-key-management",
+          "lines": 126
+        },
+        {
+          "name": "authz-authorization",
+          "description": "Enforces authorization on every request with server-side policy checks, default-deny object ownership, and centralized middleware, preventing broken function-level and object-level access control. Use when adding or reviewing endpoints that act on a specific record, introducing roles or tenancy, or fixing \"user can see other users' data\" reports.",
+          "folder": "authz-authorization",
+          "lines": 98
+        },
+        {
+          "name": "code-signing",
+          "description": "Signs and verifies software artifacts, containers, commits, and packages with isolated keys, short-lived certificates, and enforced verification gates. Use when setting up release signing, verifying a downloaded binary before execution, signing container images, or requiring signature checks in a deployment pipeline.",
+          "folder": "code-signing",
+          "lines": 120
+        },
+        {
+          "name": "csp-configuration",
+          "description": "Authors and rolls out a Content Security Policy using nonces or hashes, strict-dash directives, and reporting, so injected script cannot execute. Use when writing or tightening a CSP, eliminating unsafe-inline and unsafe-eval, or triaging CSP violation reports.",
+          "folder": "csp-configuration",
+          "lines": 101
+        },
+        {
+          "name": "csrf-prevention",
+          "description": "Defends state-changing HTTP endpoints against cross-site request forgery using anti-CSRF tokens, SameSite cookies, Origin/Referer validation, and method gating. Use when adding POST/PUT/PATCH/DELETE routes, working with cookie-based sessions, or reviewing forms and AJAX mutations for CSRF exposure.",
+          "folder": "csrf-prevention",
+          "lines": 112
+        },
+        {
+          "name": "dependency-vulnerability-audit",
+          "description": "Audits direct and transitive dependencies for known CVEs, license risk, and unmaintained packages, then drives remediation through pinning, overrides, and reachability analysis. Use when reviewing a lockfile, updating dependencies, gating a release on dependency risk, or triaging a dependency scanner report for real exploitability.",
+          "folder": "dependency-vulnerability-audit",
+          "lines": 100
+        },
+        {
+          "name": "encryption-at-rest",
+          "description": "Encrypts stored data with managed keys, enforces TLS in transit, and prevents sensitive fields from leaking into backups and logs. Use when storing PII or credentials at rest, choosing KMS or envelope encryption, encrypting database volumes or object storage, or handling field-level encryption and key rotation.",
+          "folder": "encryption-at-rest",
+          "lines": 123
+        },
+        {
+          "name": "gdpr-compliance",
+          "description": "Implements GDPR data-subject rights, lawful basis, records of processing, breach notification timelines, and controller/processor obligations in code and process. Use when handling access, deletion, or portability requests, responding to a personal data breach, or documenting processing activities for a controller or processor.",
+          "folder": "gdpr-compliance",
+          "lines": 125
+        },
+        {
+          "name": "incident-forensics",
+          "description": "Investigates security incidents by preserving volatile evidence, establishing timeline and blast radius, containing spread, and producing defensible findings. Use when responding to suspected account takeover, unauthorized access, data exfiltration, or a breach requiring root cause analysis.",
+          "folder": "incident-forensics",
+          "lines": 100
+        },
+        {
+          "name": "input-sanitization",
+          "description": "Validates untrusted input at the system boundary with typed schemas, explicit allowlists, canonicalization, and size limits, rejecting malformed data before it reaches business logic. Use when adding or reviewing request bodies, query parameters, headers, file uploads, and API input validation.",
+          "folder": "input-sanitization",
+          "lines": 106
+        },
+        {
+          "name": "multi-factor-auth",
+          "description": "Implements phishing-resistant second factors using WebAuthn passkeys and TOTP with verified enrollment, backup codes, and step-up verification for sensitive actions. Use when adding MFA to a login flow, requiring re-verification for privileged actions, or migrating accounts to passkeys.",
+          "folder": "multi-factor-auth",
+          "lines": 127
+        },
+        {
+          "name": "owasp-top-ten",
+          "description": "Maps a codebase or design against the OWASP Top Ten 2021 and its API Security Top Ten, producing a prioritized gap list with concrete remediations. Use when running a general application security review, preparing for a penetration test or audit, or checking which OWASP categories a service is exposed to.",
+          "folder": "owasp-top-ten",
+          "lines": 70
+        },
+        {
+          "name": "password-handling",
+          "description": "Stores and verifies user passwords with Argon2id, resists enumeration and offline cracking, and enforces reset flows that do not leak account existence. Use when implementing signup, login, or password reset, migrating legacy hashes, or responding to a suspected credential-stuffing attack.",
+          "folder": "password-handling",
+          "lines": 125
+        },
+        {
+          "name": "penetration-test-planning",
+          "description": "Scopes, plans, and executes authorized security testing with a written rules of engagement, realistic threat scenarios, and safe verification, producing prioritized remediation. Use when commissioning a penetration test, defining scope and authorization, or converting findings into retest-ready fixes.",
+          "folder": "penetration-test-planning",
+          "lines": 98
+        },
+        {
+          "name": "privacy-by-design",
+          "description": "Builds privacy into data flows at the design stage with data minimization, purpose limitation, pseudonymization, retention limits, and privacy reviews. Use when designing a feature that collects or processes personal data, adding analytics or logging of user activity, or reducing existing data exposure.",
+          "folder": "privacy-by-design",
+          "lines": 126
+        },
+        {
+          "name": "sast-dawg",
+          "description": "Runs static application security testing with dataflow-aware taint analysis, triages results by reachability, and gates merges on high-confidence findings. Use when setting up SAST in CI, tuning rules, triaging a scanner report, or explaining a taint-tracking finding.",
+          "folder": "sast-dawg",
+          "lines": 124
+        },
+        {
+          "name": "secrets-scanning",
+          "description": "Finds and removes leaked credentials, API keys, and tokens from repositories and history using entropy and pattern detection, then rotates and verifies each exposed secret. Use when auditing a repo for committed secrets, before open-sourcing a project, during pre-commit setup, or when investigating a suspected credential exposure.",
+          "folder": "secrets-scanning",
+          "lines": 112
+        },
+        {
+          "name": "secure-coding-review",
+          "description": "Reviews changed code for exploitable defects, missing authorization, unsafe defaults, and secret leakage, reporting findings with evidence and fixes. Use when reviewing a pull request or a diff for security impact, performing a pre-merge security gate, or assessing whether a change introduces risk.",
+          "folder": "secure-coding-review",
+          "lines": 101
+        },
+        {
+          "name": "secure-headers",
+          "description": "Applies and verifies browser-facing security response headers such as Strict-Transport-Security, X-Content-Type-Options, Referrer-Policy, and frame restrictions on every response path. Use when configuring an HTTP server, reverse proxy, CDN, or framework middleware, and when verifying headers in CI.",
+          "folder": "secure-headers",
+          "lines": 106
+        },
+        {
+          "name": "session-hijacking-defense",
+          "description": "Secures session lifecycle with unpredictable rotated identifiers, fixation defenses, idle and absolute expiry, and revocation on risk events. Use when implementing session creation or logout, adding cookie session settings, mitigating session fixation or replay, or responding to a suspected stolen token.",
+          "folder": "session-hijacking-defense",
+          "lines": 125
+        },
+        {
+          "name": "sql-injection-defense",
+          "description": "Removes SQL injection risk by replacing string-built queries with parameterized statements, allowlisted identifiers, and least-privilege database roles. Use when writing or reviewing ORM raw queries, dynamic ORDER BY or table selection, migrations, or any query assembled with concatenation or f-strings.",
+          "folder": "sql-injection-defense",
+          "lines": 102
+        },
+        {
+          "name": "ssrf-prevention",
+          "description": "Blocks server-side request forgery by validating outbound URLs against scheme, host, port, and resolved-IP allowlists before any HTTP call. Use when the server fetches user-supplied URLs (webhooks, image/avatar proxies, PDF renderers, link previews, import-from-URL features), or reviewing outbound HTTP client code.",
+          "folder": "ssrf-prevention",
+          "lines": 124
+        },
+        {
+          "name": "supply-chain-security",
+          "description": "Secures the build and delivery path with pinned dependencies, provenance attestation, isolated CI, and signed artifacts to prevent compromised packages and poisoned releases. Use when hardening a build pipeline, adding dependency pinning or SBOMs, or reviewing a release process for tampering risk.",
+          "folder": "supply-chain-security",
+          "lines": 126
+        },
+        {
+          "name": "threat-modeling",
+          "description": "Produces a STRIDE-based threat model for a component, service, or architecture, covering trust boundaries, assets, abuse cases, and mitigations. Use when designing a new feature or service, reviewing a pull request that adds an endpoint or trust boundary, or answering \"what can go wrong here\" before implementation starts.",
+          "folder": "threat-modeling",
+          "lines": 71
+        },
+        {
+          "name": "xss-prevention",
+          "description": "Eliminates cross-site scripting by auditing HTML sinks, URL and attribute sinks, and DOM injection points, then applying context-aware output encoding. Use when rendering user-supplied HTML or Markdown, reviewing innerHTML/dangerouslySetInnerHTML, sanitizing rich text, or hardening templating against reflected and stored XSS.",
+          "folder": "xss-prevention",
+          "lines": 105
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "title": "SEO",
+      "blurb": "Technical audits, keyword and SERP research, on-page and metadata work, schema markup, site architecture, indexation control, international / local / ecommerce / programmatic SEO, migrations, and AI search visibility.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "ai-search-visibility",
+          "description": "Optimizes presence in AI answer engines — Google AI Overviews and AI Mode, Bing Copilot, ChatGPT Search, Perplexity and Claude — via crawler controls, llms.txt, extractable answer blocks, entity clarity, citation-worthy original data and AI-referral analytics. Use when asked about AIO/AI visibility, when tracking AI traffic separately, or when LLM citations need improving.",
+          "folder": "ai-search-visibility",
+          "lines": 125
+        },
+        {
+          "name": "content-refresh",
+          "description": "Audits and updates existing ranking content — decay diagnosis, intent and SERP re-alignment, consolidation and pruning, internal-link and schema repairs, and freshness signals. Use when organic traffic declines on pages that once ranked, when a top-20 page sits on page two, or when planning a quarterly content update cycle.",
+          "folder": "content-refresh",
+          "lines": 111
+        },
+        {
+          "name": "content-strategy",
+          "description": "Designs the topical architecture of a site's content — pillars, clusters, publishing cadence and measurement — mapping every piece to a commercial stage rather than to a keyword volume figure. Use when planning an editorial roadmap, deciding how many posts to publish, or when asked for a content strategy or topic cluster plan.",
+          "folder": "content-strategy",
+          "lines": 98
+        },
+        {
+          "name": "core-web-vitals-seo",
+          "description": "Diagnoses and fixes LCP, INP and CLS from field data at the 75th percentile, plus the TTFB, render-blocking and long-task causes behind them. Use when Search Console or PageSpeed Insights shows Core Web Vitals failures, when organic CTR is unstable across devices, or when performance work is framed as SEO.",
+          "folder": "core-web-vitals-seo",
+          "lines": 125
+        },
+        {
+          "name": "crawl-budget-optimization",
+          "description": "Diagnoses and reduces Googlebot crawl waste using log-file hit ratios, crawl demand and recrawl cadence, response times and facet traps — prioritizing index coverage over request volume. Use when large sites index slowly, new pages take weeks to appear, or when asked how to increase crawl rate or stop Googlebot hitting useless URLs.",
+          "folder": "crawl-budget-optimization",
+          "lines": 118
+        },
+        {
+          "name": "ecommerce-seo",
+          "description": "Optimizes online stores for organic search — category and product templates, faceted navigation control, out-of-stock and discontinued SKU handling, variant URLs, Product/Offer schema and feed consistency. Use when scaling category or product pages, controlling filter URLs, retiring products, or fixing rich-result and Merchant Center issues.",
+          "folder": "ecommerce-seo",
+          "lines": 123
+        },
+        {
+          "name": "indexation-control",
+          "description": "Controls which URLs Google may index using meta robots, X-Robots-Tag headers, index-coverage status diagnosis and utility-URL exclusion patterns. Use when pages are indexed that should not be, when important pages are excluded, when Search Console coverage reports errors, or when protecting staging.",
+          "folder": "indexation-control",
+          "lines": 117
+        },
+        {
+          "name": "internal-linking",
+          "description": "Builds and audits the internal link graph — anchor text distribution, hub-and-spoke clusters, orphan rescue, navigation and footer link governance, and authority flow. Use when priority pages lack inbound internal links, after a content launch, when equity pools on the homepage, or as a scheduled link audit.",
+          "folder": "internal-linking",
+          "lines": 117
+        },
+        {
+          "name": "international-seo",
+          "description": "Sets up and audits multilingual and multiregional SEO with hreflang, locale subfolders or subdomains, per-market canonical strategy, translation quality and local keyword mapping. Use when launching or restructuring an international site, when Google serves the wrong locale, or when hreflang errors appear.",
+          "folder": "international-seo",
+          "lines": 110
+        },
+        {
+          "name": "keyword-research",
+          "description": "Builds a keyword-to-page map from search volume, SERP difficulty and intent data, then assigns each cluster one owning URL. Use when planning new content, deciding whether a keyword needs a new page or an existing one, or when asked for keyword research, a content backlog, or topic clusters.",
+          "folder": "keyword-research",
+          "lines": 96
+        },
+        {
+          "name": "local-seo",
+          "description": "Optimizes local search presence — Google Business Profile, NAP consistency, LocalBusiness schema, location pages, reviews, citations and local link acquisition. Use when a multi-location or service-area business needs map-pack visibility, or when Google Business Profile data conflicts with the website.",
+          "folder": "local-seo",
+          "lines": 125
+        },
+        {
+          "name": "log-file-analysis",
+          "description": "Analyzes server logs for Googlebot behavior — crawl demand, hit buckets, crawl traps, response-time and status impact, index-coverage correlation and discovery lag. Use when diagnosing crawl-rate or index-coverage problems, quantifying crawl waste, or when crawl-budget questions need evidence from logs.",
+          "folder": "log-file-analysis",
+          "lines": 114
+        },
+        {
+          "name": "metadata-and-social-cards",
+          "description": "Constructs and templates title tags, meta descriptions, Open Graph and Twitter card markup, favicons and icons so URLs render correctly in SERP and social previews. Use when CTR is low despite good rankings, when sharing to LinkedIn/Slack/X renders wrong, or when templating metadata across a framework.",
+          "folder": "metadata-and-social-cards",
+          "lines": 126
+        },
+        {
+          "name": "mobile-first-indexing",
+          "description": "Audits and fixes mobile-first indexing — identical content across devices, dynamic serving parity, viewport and responsive image markup, and mobile render failures. Use when Search Console flags mobile content issues, when desktop and mobile versions differ, or when rankings differ between mobile and desktop.",
+          "folder": "mobile-first-indexing",
+          "lines": 117
+        },
+        {
+          "name": "on-page-seo",
+          "description": "Optimizes a single page's ranking elements — title tag, H1, heading hierarchy, internal links, word depth, intent match and duplicate handling — against its target SERP. Use when a page ranks on page two or three, when a new page is published, or when asked to optimize specific URLs for organic search.",
+          "folder": "on-page-seo",
+          "lines": 102
+        },
+        {
+          "name": "programmatic-seo",
+          "description": "Designs and audits templated pages at scale — indexable pattern limits, unique data fields, internal linking between variants, parameter control and thin-page pruning. Use when scaling landing pages by keyword/location/product combination, when Google thins or ignores a programmatic set, or when deciding which parameter combinations to index.",
+          "folder": "programmatic-seo",
+          "lines": 119
+        },
+        {
+          "name": "robots-and-canonicals",
+          "description": "Writes and audits robots.txt directives and rel=canonical tags — www/http normalization, parameter handling, redirect-to-canonical patterns and AI crawler rules. Use when duplicate URLs split rankings, when canonicals conflict or point to redirects, when writing robots.txt blocks, or when consolidating URL variants.",
+          "folder": "robots-and-canonicals",
+          "lines": 125
+        },
+        {
+          "name": "saas-seo",
+          "description": "Optimizes B2B SaaS sites for organic acquisition — solution and integration landing pages, comparison and alternative pages, free-tool link acquisition, docs gating decisions and non-branded pipeline tracking. Use when a SaaS needs search-sourced pipeline, when building comparison or integration pages, or when choosing between gated and ungated content.",
+          "folder": "saas-seo",
+          "lines": 124
+        },
+        {
+          "name": "schema-markup",
+          "description": "Implements and validates JSON-LD structured data for rich results — Organization, Article, Product, FAQ, BreadcrumbList and LocalBusiness — under Google's current eligibility rules. Use when a page qualifies for rich results but shows none, or when adding structured data to product, article, recipe, event or local page templates.",
+          "folder": "schema-markup",
+          "lines": 124
+        },
+        {
+          "name": "seo-migration",
+          "description": "Plans and executes SEO-preserving site migrations — URL maps, 301 chains, staging validation, pre/post traffic parity, sitemap and hreflang updates, and post-launch monitoring. Use when changing domains, platforms or URL structures, moving to HTTPS, consolidating subdomains, or when traffic drops after a launch.",
+          "folder": "seo-migration",
+          "lines": 111
+        },
+        {
+          "name": "seo-testing",
+          "description": "Builds automated SEO regression tests — CI assertions for canonicals, robots directives, titles, status codes, structured data, hreflang reciprocity and Core Web Vitals budgets — plus pre-launch URL diffing against production. Use when adding SEO checks to a pipeline, preventing regressions in PRs, or validating a release before deploy.",
+          "folder": "seo-testing",
+          "lines": 111
+        },
+        {
+          "name": "serp-analysis",
+          "description": "Reverse-engineers a live Google or Bing results page to decide whether a target query is winnable and what format the ranking page must take. Use when evaluating a specific keyword before committing effort, diagnosing why a page ranks on page two, or when asked for SERP research, competitor SERP review, or ranking feasibility.",
+          "folder": "serp-analysis",
+          "lines": 94
+        },
+        {
+          "name": "site-architecture",
+          "description": "Designs and audits URL structure, directory depth, pagination, taxonomies and hierarchy so crawl paths stay short and internal authority concentrates correctly. Use when planning a new site or section, flattening deep hierarchies, or when asked about site structure, information architecture or URL design.",
+          "folder": "site-architecture",
+          "lines": 124
+        },
+        {
+          "name": "sitemap-generation",
+          "description": "Generates and validates XML sitemaps and sitemap indexes — URL selection, lastmod accuracy, freshness automation, image and video extensions, hreflang alternates and Search Console submission. Use when submitting a sitemap, when content is discovered late, when lastmod is unreliable, or when building sitemaps for a large or multi-locale site.",
+          "folder": "sitemap-generation",
+          "lines": 126
+        },
+        {
+          "name": "technical-seo-audit",
+          "description": "Runs a full technical SEO audit of a site from crawl exports, XML sitemaps, log files and analytics, covering indexability, crawl waste, duplicate/thin URL clusters, redirect chains, status-code errors and Core Web Vitals. Use when organic traffic or rankings drop, before or after a migration, or when asked for a technical SEO audit or site health report.",
+          "folder": "technical-seo-audit",
+          "lines": 92
+        }
+      ]
+    },
+    {
+      "id": "testing-quality",
+      "title": "Testing & Quality",
+      "blurb": "Unit through end-to-end strategy, visual regression, contract and property-based testing, load and mutation testing, accessibility testing, mocks and fixtures, flakiness triage, parallel execution, benchmarks, chaos, and quality gates.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "accessibility-testing",
+          "description": "Automates WCAG checks with axe-core in Vitest and Playwright, then covers keyboard, focus order, and screen-reader semantics by hand. Use when adding interactive UI, fixing an a11y audit finding, or gating a release on WCAG 2.2 AA.",
+          "folder": "accessibility-testing",
+          "lines": 126
+        },
+        {
+          "name": "api-testing",
+          "description": "Tests HTTP endpoints through the real handler stack with Supertest and Fastify inject, Ajv validation against the OpenAPI schema, and auth, pagination, and idempotency matrices. Use when adding or changing a REST endpoint, or when an API's status codes and error bodies must be proven correct.",
+          "folder": "api-testing",
+          "lines": 128
+        },
+        {
+          "name": "benchmark-testing",
+          "description": "Measures code performance with Vitest bench, tinybench, and CI budgets that fail on regression. Use when tracking a latency or memory budget, choosing between two implementations, or preventing an optimisation from silently regressing.",
+          "folder": "benchmark-testing",
+          "lines": 129
+        },
+        {
+          "name": "browser-test-automation",
+          "description": "Drives Chromium and Firefox programmatically with Playwright and Puppeteer for scraping, PDF and screenshot capture, downloads, and reusable authenticated sessions. Use when a script needs a real browser outside a test suite, such as batch rendering or data extraction jobs.",
+          "folder": "browser-test-automation",
+          "lines": 130
+        },
+        {
+          "name": "chaos-testing",
+          "description": "Injects latency, packet loss, and dependency outages with Toxiproxy and fault-injection seams, then asserts the system degrades and recovers correctly. Use when validating retries, circuit breakers, timeouts, and graceful degradation before a launch.",
+          "folder": "chaos-testing",
+          "lines": 122
+        },
+        {
+          "name": "code-quality-gates",
+          "description": "Wires automated test and quality enforcement into CI with layered jobs, required status checks, coverage and mutation gates, and size-of-change limits. Use when setting up or repairing a merge gate, or when CI is slow or unreliable.",
+          "folder": "code-quality-gates",
+          "lines": 128
+        },
+        {
+          "name": "component-test-harness",
+          "description": "Builds a component test harness with Testing Library, user-event, Vitest browser mode, and provider wrappers. Use when a component's behaviour needs real DOM events and network mocking rather than jsdom or a full E2E run.",
+          "folder": "component-test-harness",
+          "lines": 129
+        },
+        {
+          "name": "contract-testing",
+          "description": "Locks service boundaries with Pact consumer-driven contracts, provider verification, and Spectral-linted OpenAPI specs. Use when two teams ship independently against one API, when adding or breaking an endpoint, or when integration tests have become a hand-off bottleneck.",
+          "folder": "contract-testing",
+          "lines": 131
+        },
+        {
+          "name": "e2e-test-authoring",
+          "description": "Authors Playwright end-to-end specs with role-based selectors, test.step, isolated storageState, and CI-safe sharding. Use when adding a user-journey test, rewriting brittle CSS or nth-child selectors, or driving the Playwright suite in a pipeline.",
+          "folder": "e2e-test-authoring",
+          "lines": 125
+        },
+        {
+          "name": "fixture-and-factory-design",
+          "description": "Builds typed test data factories and fixtures with defaults, overrides, freeze semantics, and composable builders. Use when test setup is verbose or error-prone, or when fixtures are mutated by one test and break another.",
+          "folder": "fixture-and-factory-design",
+          "lines": 130
+        },
+        {
+          "name": "flaky-test-triage",
+          "description": "Detects, reproduces, and root-causes intermittent test failures with quarantine, per-test seeds, and shared failure triage. Use when a test fails intermittently in CI, when retry counts are masking regressions, or when the suite has gone red without code changes.",
+          "folder": "flaky-test-triage",
+          "lines": 127
+        },
+        {
+          "name": "integration-testing",
+          "description": "Verifies real subsystem wiring against disposable Postgres, Redis, and HTTP services using Testcontainers, Vitest globalSetup, and transactional isolation. Use when a bug only appears once the database, cache, queue, or two services actually talk to each other.",
+          "folder": "integration-testing",
+          "lines": 119
+        },
+        {
+          "name": "load-testing",
+          "description": "Builds k6 scenarios with arrival-rate load models, threshold gates, custom Trend and Rate metrics, and staged soak tests. Use when validating throughput or latency SLOs before a launch, when capacity regresses, or when choosing instance sizes.",
+          "folder": "load-testing",
+          "lines": 128
+        },
+        {
+          "name": "mocking-strategies",
+          "description": "Replaces network and boundary dependencies with MSW request handlers and vi.mock module stubs, choosing the seam and controlling coverage per test. Use when testing code that calls fetch or third-party SDKs, or when a real service is too slow or unavailable.",
+          "folder": "mocking-strategies",
+          "lines": 128
+        },
+        {
+          "name": "mutation-testing",
+          "description": "Measures test strength with Stryker mutators, per-test coverage analysis, mutation score thresholds, and diff-scoped runs. Use when coverage looks high but assertions are weak, or when adding a strict quality gate for critical modules.",
+          "folder": "mutation-testing",
+          "lines": 127
+        },
+        {
+          "name": "parallel-test-execution",
+          "description": "Runs suites concurrently with Vitest pools and thread affinity, Playwright shards, per-worker databases, and nextest profiles. Use when the suite exceeds the CI time budget, or when tests collide on shared ports, databases, or files.",
+          "folder": "parallel-test-execution",
+          "lines": 113
+        },
+        {
+          "name": "property-based-testing",
+          "description": "Finds counterexamples with fast-check arbitraries, invariants, shrinking, and seeded regression replay. Use when input space is too large to enumerate, when testing parsers, encoders, reducers, or invariants across round trips.",
+          "folder": "property-based-testing",
+          "lines": 125
+        },
+        {
+          "name": "smoke-test-suites",
+          "description": "Builds and runs fast smoke suites that gate deploys and rollouts, using tagged Playwright specs, health probes, and a real environment. Use when a release needs a go/no-go check, or when wiring a smoke stage into a deployment pipeline.",
+          "folder": "smoke-test-suites",
+          "lines": 127
+        },
+        {
+          "name": "snapshot-testing",
+          "description": "Pins serialized output with Vitest snapshots, asymmetric property matchers, inline snapshots, and CI read-only mode. Use when comparing large stable structures such as markup, i18n bundles, config output, or generated code.",
+          "folder": "snapshot-testing",
+          "lines": 121
+        },
+        {
+          "name": "test-coverage-analysis",
+          "description": "Interprets V8 coverage reports, sets per-directory thresholds, and ratchets against a base-branch baseline. Use when deciding where to add tests, when coverage dropped, or when a coverage gate needs realistic numbers.",
+          "folder": "test-coverage-analysis",
+          "lines": 127
+        },
+        {
+          "name": "test-data-management",
+          "description": "Seeds, scopes, and resets test data with deterministic Faker, migration-based fixtures, per-test transactions, and seed-recorded replay. Use when tests interfere through shared rows, when data volume skews results, or when a failure needs a reproducible dataset.",
+          "folder": "test-data-management",
+          "lines": 117
+        },
+        {
+          "name": "test-documentation",
+          "description": "Documents a test suite with a generated test catalog, ownership, run commands, seeding rules, and per-layer conventions. Use when onboarding, when a suite has unknown coverage, or when handing a service to another team.",
+          "folder": "test-documentation",
+          "lines": 129
+        },
+        {
+          "name": "test-strategy-planning",
+          "description": "Plans test investment with a risk matrix, pyramid placement rules, layer budgets, and a change-type-to-test-set mapping. Use at the start of a feature or a quarter, when coverage feels arbitrary, or when deciding which layers a change needs.",
+          "folder": "test-strategy-planning",
+          "lines": 112
+        },
+        {
+          "name": "unit-testing-strategy",
+          "description": "Sets unit test boundaries and writes AAA-structured Vitest suites with dependency injection, injected clocks, fake timers, and table-driven cases. Use when deciding what to unit-test, splitting a module or class for testability, or lifting mutation score on pure business logic.",
+          "folder": "unit-testing-strategy",
+          "lines": 108
+        },
+        {
+          "name": "visual-regression-testing",
+          "description": "Catches pixel regressions with Playwright toHaveScreenshot, per-component snapshots, pinned fonts, and a reviewed-baseline workflow. Use when styling changes can break layout invisibly, when adding a new UI component gallery, or when a bug report says the UI looks wrong.",
+          "folder": "visual-regression-testing",
+          "lines": 128
+        }
+      ]
+    },
+    {
+      "id": "uiux-design",
+      "title": "UI/UX & Design",
+      "blurb": "Research, personas, information architecture, wireframes, interaction design, design system governance, color / type / spacing systems, motion, accessibility, usability testing, forms UX, and data visualization.",
+      "count": 25,
+      "skills": [
+        {
+          "name": "accessibility-audit",
+          "description": "Audits interfaces against WCAG 2.2 Level AA using automated tooling plus manual checks of focus order, reflow, target size, and status messages, then produces prioritized remediation tickets. Use before shipping a feature that must meet accessibility requirements, or when fixing a reported accessibility defect.",
+          "folder": "accessibility-audit",
+          "lines": 111
+        },
+        {
+          "name": "cognitive-load-reduction",
+          "description": "Reduces cognitive load by chunking work, applying progressive disclosure, matching controls to user mental models, and removing unnecessary decisions. Use when a flow has too many steps or simultaneous choices, when settings and forms overwhelm users, or when users abandon mid-task.",
+          "folder": "cognitive-load-reduction",
+          "lines": 116
+        },
+        {
+          "name": "color-contrast",
+          "description": "Computes and enforces WCAG 2.2 color contrast for text and non-text elements, including large-text and disabled-state rules, using relative luminance and OKLCH chroma reduction. Use when a palette fails contrast, a token change breaks readability, or auditing gray text on colored surfaces.",
+          "folder": "color-contrast",
+          "lines": 122
+        },
+        {
+          "name": "color-systems",
+          "description": "Builds color systems from perceptually uniform OKLCH ramps, semantic token layers, and verified light, dark, and high-contrast themes. Use when creating or refactoring a palette, adding dark mode, or when hardcoded colors need to become tokens.",
+          "folder": "color-systems",
+          "lines": 111
+        },
+        {
+          "name": "data-visualization",
+          "description": "Selects and builds correct charts and dashboards — choosing encodings, scales, honest axes, accessible color, and tabular fallbacks for screen readers. Use when creating a new chart or dashboard, fixing a misleading visualization, or making data viz accessible.",
+          "folder": "data-visualization",
+          "lines": 125
+        },
+        {
+          "name": "design-process",
+          "description": "Runs the double-diamond design process through discover, define, develop, and deliver with named phase gates, required deliverables, and a critique rubric at each gate. Use when starting a new product or feature, deciding what to build next, or when work keeps shipping with no validation step.",
+          "folder": "design-process",
+          "lines": 82
+        },
+        {
+          "name": "design-systems-governance",
+          "description": "Governs the design system lifecycle across three token tiers, component contribution and deprecation policy, semantic versioning, documentation, and adoption metrics. Use when standing up or scaling a shared design system, deciding whether something gets promoted to a component, or when adoption has stalled.",
+          "folder": "design-systems-governance",
+          "lines": 105
+        },
+        {
+          "name": "empty-state-design",
+          "description": "Designs distinct empty states for first-run, no-results, cleared, error, and permission-restricted conditions with purposeful next actions and correct semantics. Use when a list or dashboard shows nothing and users do not know what to do next, or when zero-data and no-results are conflated.",
+          "folder": "empty-state-design",
+          "lines": 118
+        },
+        {
+          "name": "error-message-design",
+          "description": "Writes and places error messages that state what happened, why, and how to recover, using inline validation, error summaries, preserved input, and appropriate live-region urgency. Use when rewriting vague validation errors, choosing between inline and toast errors, or when forms fail users at submission.",
+          "folder": "error-message-design",
+          "lines": 127
+        },
+        {
+          "name": "form-ux-patterns",
+          "description": "Applies form patterns including correct input types and autocomplete tokens, persistent labels, inline validation on blur, input masking, and accessible error association. Use when building or fixing a form, reducing form abandonment, or adding autofill and password manager support.",
+          "folder": "form-ux-patterns",
+          "lines": 109
+        },
+        {
+          "name": "information-architecture",
+          "description": "Designs information architecture — content taxonomy, label vocabulary, faceted navigation, URL structure, and search fallbacks — validated with card sorting and tree testing. Use when users cannot find content, when restructuring a site or app navigation, or before adding a new top-level section.",
+          "folder": "information-architecture",
+          "lines": 83
+        },
+        {
+          "name": "interaction-design",
+          "description": "Specifies interactive component behavior across the full state surface — hover, focus-visible, active, loading, disabled, error, and optimistic transitions — plus the edge-case logic of a flow. Use when writing a component spec, defining transitions between states, or when a flow breaks anywhere outside the happy path.",
+          "folder": "interaction-design",
+          "lines": 100
+        },
+        {
+          "name": "keyboard-navigation",
+          "description": "Implements full keyboard operability — logical focus order, visible focus indicators, roving tabindex in composites, focus trapping only where justified, skip links, and scoped shortcuts. Use when fixing tab order or focus traps, adding shortcuts, or making a component operable without a pointer.",
+          "folder": "keyboard-navigation",
+          "lines": 119
+        },
+        {
+          "name": "microinteraction-design",
+          "description": "Designs microinteractions — press, hover, toggle, load, success, and undo feedback — as explicit state machines with timing budgets and truthful progress reporting. Use when refining button and toggle behavior, communicating async results, or making destructive actions reversible.",
+          "folder": "microinteraction-design",
+          "lines": 124
+        },
+        {
+          "name": "motion-principles",
+          "description": "Defines motion as duration, easing, and choreography rules with reduced-motion fallbacks and interruptible transitions. Use when adding transitions or animations, standardizing easing curves and timing tokens, or when UI motion triggers vestibular discomfort.",
+          "folder": "motion-principles",
+          "lines": 113
+        },
+        {
+          "name": "onboarding-flows",
+          "description": "Designs onboarding and activation flows with progressive profiling, checklists, contextual empty states, and time-to-first-value instrumentation. Use when reducing signup drop-off, getting new users to a first success moment, or simplifying a multi-step setup wizard.",
+          "folder": "onboarding-flows",
+          "lines": 103
+        },
+        {
+          "name": "persona-synthesis",
+          "description": "Synthesizes raw research notes into jobs-to-be-done statements, affinity clusters, and evidence-backed personas with prioritized needs and behaviors instead of demographic fiction. Use when interview notes must become something a team can design against, or when existing personas have no traceable research behind them.",
+          "folder": "persona-synthesis",
+          "lines": 85
+        },
+        {
+          "name": "responsive-navigation",
+          "description": "Designs navigation that adapts across breakpoints using persistent sidebars, disclosure menus, off-canvas drawers, and bottom tab bars with correct ARIA and focus management. Use when converting a desktop nav to mobile or when a menu breaks at tablet width.",
+          "folder": "responsive-navigation",
+          "lines": 124
+        },
+        {
+          "name": "screen-reader-compatibility",
+          "description": "Verifies screen reader behavior across VoiceOver, NVDA, and TalkBack by tracing focus order, accessible names, roles, states, and live-region announcements. Use when a page is unusable with a screen reader, when building custom widgets, or before claiming accessibility conformance.",
+          "folder": "screen-reader-compatibility",
+          "lines": 123
+        },
+        {
+          "name": "spacing-and-grid",
+          "description": "Applies spacing scales, layout grids, stack primitives, and container queries so layout stays consistent across breakpoints and themes. Use when fixing inconsistent padding and gutters, building responsive layouts, or replacing hardcoded pixel values with tokens.",
+          "folder": "spacing-and-grid",
+          "lines": 114
+        },
+        {
+          "name": "typography-systems",
+          "description": "Defines a typographic scale using a ratio with paired line-heights, measure limits, weight and optical-size axes, and fluid sizing with clamp(). Use when setting type styles, fixing dense or unreadable body text, or making typography responsive without hardcoded breakpoints.",
+          "folder": "typography-systems",
+          "lines": 101
+        },
+        {
+          "name": "usability-testing",
+          "description": "Plans and runs task-based usability tests with moderated sessions, think-aloud protocol, defined success metrics, severity-based issue ranking, and SUS scoring. Use when validating a design before build or after release, or when prioritizing a backlog of usability problems.",
+          "folder": "usability-testing",
+          "lines": 102
+        },
+        {
+          "name": "user-research",
+          "description": "Plans and runs user research — semi-structured interviews, contextual observation, survey construction, and diary studies — with consent, sampling, and verbatim note-taking standards. Use when a design assumption is untested, before committing to a roadmap bet, or when you need evidence about what users actually do rather than what they say they want.",
+          "folder": "user-research",
+          "lines": 91
+        },
+        {
+          "name": "voice-and-tone",
+          "description": "Defines product voice and tone, builds a terminology glossary, and writes UI microcopy for buttons, confirmations, and status messages consistently across surfaces. Use when writing interface copy, resolving conflicting terminology, or aligning marketing language with in-product voice.",
+          "folder": "voice-and-tone",
+          "lines": 121
+        },
+        {
+          "name": "wireframing",
+          "description": "Produces low- and mid-fidelity wireframes as greyscale structural artifacts with an annotation set, then advances fidelity deliberately once structure is validated. Use when you need to test layout, hierarchy, and flow cheaply before visual design, or to document a screen before build handoff.",
+          "folder": "wireframing",
+          "lines": 111
+        }
+      ]
+    }
+  ]
+}
