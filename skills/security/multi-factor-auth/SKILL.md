@@ -56,7 +56,6 @@ def finish_registration(user, session, response):
         sign_count=verification.sign_count,
         aaguid=verification.aaguid,
     )
-```
 
 def start_assertion(user, session, action: str):
     options = generate_authentication_options(

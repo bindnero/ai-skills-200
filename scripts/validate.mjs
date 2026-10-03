@@ -105,7 +105,12 @@ for (const entry of walk(SKILLS_DIR)) {
   if (!/\*\*Do not use when:\*\*/.test(body)) warnings.push(`${rel}: no "**Do not use when:**" boundary line`)
 
   const fences = (body.match(/^```/gm) || []).length
-  if (fences < 4) warnings.push(`${rel}: only ${fences / 2} code block(s) — expected at least 2`)
+  if (fences % 2 !== 0) {
+    // An odd count means a block was never closed, so every line after it renders as code.
+    errors.push(`${rel}: unbalanced code fence (${fences} markers) — a code block is not closed`)
+  } else if (fences < 4) {
+    warnings.push(`${rel}: only ${fences / 2} code block(s) — expected at least 2`)
+  }
 
   if (lines < 40) errors.push(`${rel}: body only ${lines} lines — too thin to be useful`)
   else if (lines > 260) warnings.push(`${rel}: body ${lines} lines — consider splitting into references/`)
