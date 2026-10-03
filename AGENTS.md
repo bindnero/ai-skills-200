@@ -45,7 +45,7 @@ Validation is strict and enforced in CI. `npm run validate` fails on: malformed 
 
 `CATALOG.md`, `catalog.json`, and `docs/02-*.md` through `docs/09-*.md` are generated. Edit the skill, then run `npm run check` and `npm run docs`. Hand edits are silently overwritten.
 
-Hand-written and safe to edit: `README.md`, `AGENTS.md`, `docs/README.md`, `docs/01-getting-started.md`, `docs/10-install-targets.md`, `docs/11-authoring.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `.github/` templates and workflows.
+Hand-written and safe to edit: `README.md`, `AGENTS.md`, `docs/README.md`, `docs/01-getting-started.md`, `docs/10-install-targets.md`, `docs/11-authoring.md`, `docs/12-agent-blueprint.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `.github/` templates and workflows.
 
 ## Installing during development
 

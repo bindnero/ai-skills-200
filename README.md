@@ -186,6 +186,7 @@ Then run `npm run check` — the validator enforces frontmatter shape, folder-na
 | [09 AI & Agents](docs/09-ai-agents.md) | the 25 AI-agent skills |
 | [10 Install targets](docs/10-install-targets.md) | exact paths, per-tool notes, troubleshooting |
 | [11 Authoring](docs/11-authoring.md) | writing, validating, and contributing skills |
+| [12 Agent blueprint](docs/12-agent-blueprint.md) | a 200-point capability matrix and execution pipeline for routing work |
 
 ---
 

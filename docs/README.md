@@ -14,11 +14,11 @@
 
 | Chapter | Count | Covers |
 | --- | --- | --- |
-| [02 · Frontend & Web](02-frontend.md) | 25 | CSS architecture, layout, tokens, components, state, React / Vue / Svelte / Next / Astro, Tailwind, assets, PWA, i18n, bundle performance |
-| [03 · Backend & API](03-backend.md) | 25 | REST / GraphQL / gRPC, WebSockets, versioning, pagination, idempotency, validation, errors, auth, jobs, queues, caching, databases |
+| [02 · Frontend & Web](02-frontend.md) | 26 | CSS architecture, layout, tokens, components, state, React / Vue / Svelte / Next / Astro, Tailwind, assets, input throttling, PWA, i18n, bundle performance |
+| [03 · Backend & API](03-backend.md) | 27 | REST / GraphQL / gRPC, WebSockets, versioning, pagination, idempotency, validation, errors, payload compression, auth, jobs, queues, caching, databases, system design |
 | [04 · SEO](04-seo.md) | 25 | Technical audits, keyword research, on-page, schema, architecture, indexation, programmatic / ecommerce / local / SaaS / international, migrations, AI search |
-| [05 · UI/UX & Design](05-uiux.md) | 25 | Research, personas, IA, wireframes, interaction, design systems, color / type / spacing, motion, accessibility, testing, forms UX |
-| [06 · DevOps & Cloud](06-devops.md) | 25 | CI/CD, Docker, Kubernetes, Helm, Terraform, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE, GitOps, releases |
+| [05 · UI/UX & Design](05-uiux.md) | 26 | Research, personas, IA, wireframes, interaction, design systems, color / type / spacing, motion, skeleton loading states, accessibility, testing, forms UX |
+| [06 · DevOps & Cloud](06-devops.md) | 26 | CI/CD, Docker, Kubernetes, Helm, Terraform, load balancers, AWS / GCP / Vercel / Cloudflare, serverless, observability, SRE, GitOps, releases |
 | [07 · Testing & Quality](07-testing.md) | 25 | Unit → E2E, visual regression, contract, property-based, load, mutation, a11y testing, mocks, fixtures, flakiness, CI gates |
 | [08 · Security](08-security.md) | 25 | Threat modeling, OWASP, injection, authn / authz, headers, CSP, crypto, MFA, secrets, supply chain, signing, GDPR |
 | [09 · AI & Agents](09-ai-agents.md) | 25 | Prompt design, tool calling, orchestration, RAG, embeddings, chunking, context, cost, evals, guardrails, injection defense, MCP |
@@ -29,6 +29,7 @@
 | --- | --- |
 | [10 · Install targets](10-install-targets.md) | you need exact paths, per-tool behaviour, or something is not showing up |
 | [11 · Authoring](11-authoring.md) | you want to write, validate, or contribute a skill |
+| [12 · Agent blueprint](12-agent-blueprint.md) | you want a 200-point capability matrix and a four-stage execution pipeline to route work with |
 
 ## One idea worth knowing before you read any of it
 

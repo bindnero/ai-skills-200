@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Generates the per-category doc chapters (docs/02..09) from skills/.
-// Hand-written chapters 01, 10 and 11 are never touched.
+// Hand-written chapters 01, 10, 11 and 12 are never touched.
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from "node:fs"
 import { join } from "node:path"
 import { fileURLToPath } from "node:url"
