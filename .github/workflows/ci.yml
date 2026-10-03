@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    name: validate + catalog up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Enforce the format contract across all 200 skill bundles.
+      - name: Validate skills
+        run: npm run validate
+
+      # Regenerate catalog.json and CATALOG.md; fail if the committed copies drift.
+      - name: Regenerate catalog
+        run: npm run catalog
+
+      - name: Check generated files are current
+        run: |
+          git diff --exit-code -- CATALOG.md catalog.json
+
+  docs:
+    name: docs up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Regenerate docs
+        run: npm run docs
+      - name: Check generated docs are current
+        run: |
+          git diff --exit-code -- docs/
+
+  installer:
+    name: installer smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install every skill to every target into a scratch dir, then uninstall.
+      - name: Install all targets
+        run: |
+          mkdir -p "$RUNNER_TEMP/proj"
+          cd "$RUNNER_TEMP/proj"
+          node "$GITHUB_WORKSPACE/scripts/install.mjs" -a -A
+      - name: Verify install counts
+        run: |
+          cd "$RUNNER_TEMP/proj"
+          for d in .agents .opencode .claude .cursor .windsurf .codex .gemini/config .agent; do
+            n=$(ls "$d/skills" 2>/dev/null | wc -l)
+            echo "$d/skills: $n"
+            [ "$n" -eq 200 ] || { echo "expected 200 in $d"; exit 1; }
+          done
+      - name: Uninstall and verify clean
+        run: |
+          cd "$RUNNER_TEMP/proj"
+          node "$GITHUB_WORKSPACE/scripts/install.mjs" -a -A --uninstall
+          test ! -f AGENTS.md || { echo "AGENTS.md not removed"; exit 1; }
+          for d in .agents .opencode .claude .cursor .windsurf .codex .gemini .agent; do
+            test ! -d "$d" || { echo "$d left behind"; exit 1; }
+          done
+          echo "clean"

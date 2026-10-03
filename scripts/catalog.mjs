@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "node:fs"
 import { join, basename } from "node:path"
 import { fileURLToPath } from "node:url"
+import { TARGETS } from "./targets.mjs"
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url))
 const SKILLS_DIR = join(ROOT, "skills")
@@ -65,16 +66,17 @@ const json = {
   version: "1.0.0",
   total,
   standard: "Agent Skills (agentskills.io) — SKILL.md directory bundle",
-  targets: {
-    "agents": { path: ".agents/skills/<name>/SKILL.md", scope: "project", tools: ["Antigravity", "Antigravity CLI", "opencode (external scan)", "npx skills"] },
-    "opencode": { path: ".opencode/skills/<name>/SKILL.md", scope: "project", tools: ["opencode"] },
-    "claude": { path: ".claude/skills/<name>/SKILL.md", scope: "project", tools: ["Claude Code"] },
-    "gemini": { path: "~/.gemini/config/skills/<name>/SKILL.md", scope: "global", tools: ["Antigravity (global)"] },
-    "cursor": { path: ".cursor/rules/<name>.mdc", scope: "project", tools: ["Cursor"] },
-    "windsurf": { path: ".windsurf/rules/<name>.md", scope: "project", tools: ["Windsurf"] },
-    "zed": { path: ".zed/rules/<name>.md", scope: "project", tools: ["Zed"] },
-    "codex": { path: ".codex/skills/<name>/SKILL.md", scope: "project", tools: ["Codex CLI"] },
-  },
+  targets: Object.fromEntries(
+    Object.entries(TARGETS).map(([key, t]) => [
+      key,
+      {
+        label: t.label,
+        format: t.format,
+        project: t.dir === "." ? "AGENTS.md" : `${t.dir}/<name>/${t.format === "dir" ? "SKILL.md" : t.format === "mdc" ? "<name>.mdc" : t.format === "windsurf" ? "<name>.md" : "AGENTS.md"}`,
+        global: t.globalDir ? (t.globalDir === "~/.config/zed" ? "~/.config/zed/AGENTS.md" : `${t.globalDir}/<name>/${t.format === "dir" ? "SKILL.md" : t.format === "mdc" ? "<name>.mdc" : "<name>.md"}`) : null,
+      },
+    ]),
+  ),
   categories: tree.map((c) => ({
     id: c.category,
     title: CATEGORY_META[c.category]?.title || c.category,

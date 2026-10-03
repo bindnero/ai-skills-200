@@ -8,6 +8,8 @@ Every skill is a portable [Agent Skills](https://agentskills.io) bundle: a folde
 skills/<category>/<skill-name>/SKILL.md
 ```
 
+MIT licensed. Open source — contributions welcome ([CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [SECURITY.md](SECURITY.md)).
+
 ---
 
 ## Why this exists
@@ -33,7 +35,7 @@ Agent tools all converged on the same idea — a folder with a `SKILL.md` that a
 ### Everything, everywhere
 
 ```bash
-git clone https://github.com/<you>/ai-skills-200
+git clone https://github.com/<your-username>/ai-skills-200.git
 cd ai-skills-200
 npm run check          # validate 200 bundles, regenerate the catalog
 
@@ -184,6 +186,14 @@ Then run `npm run check` — the validator enforces frontmatter shape, folder-na
 
 No dependencies. Node 18+.
 
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and the exact format contract, and [docs/11-authoring.md](docs/11-authoring.md) for how to write a description that actually triggers. In short: one `SKILL.md` per skill, frontmatter with only `name` + `description`, and the four sections `Instructions` → `Patterns` → `Checklist` → `Anti-patterns`. Run `npm run check` before opening a PR — CI enforces it.
+
+Found a security issue in the tooling, or prompt-injection content inside a skill? See [SECURITY.md](SECURITY.md) — please report those privately.
+
+Everyone participating is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Use it, fork it, remix the collections, contribute skills back.

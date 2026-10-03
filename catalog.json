@@ -5,63 +5,70 @@
   "standard": "Agent Skills (agentskills.io) — SKILL.md directory bundle",
   "targets": {
     "agents": {
-      "path": ".agents/skills/<name>/SKILL.md",
-      "scope": "project",
-      "tools": [
-        "Antigravity",
-        "Antigravity CLI",
-        "opencode (external scan)",
-        "npx skills"
-      ]
+      "label": "Agent Skills standard (.agents/skills) — Antigravity, Antigravity CLI, Codex, Zed, Devin, opencode",
+      "format": "dir",
+      "project": ".agents/skills/<name>/SKILL.md",
+      "global": "~/.agents/skills/<name>/SKILL.md"
     },
     "opencode": {
-      "path": ".opencode/skills/<name>/SKILL.md",
-      "scope": "project",
-      "tools": [
-        "opencode"
-      ]
+      "label": "opencode (native)",
+      "format": "dir",
+      "project": ".opencode/skills/<name>/SKILL.md",
+      "global": "~/.config/opencode/skills/<name>/SKILL.md"
     },
     "claude": {
-      "path": ".claude/skills/<name>/SKILL.md",
-      "scope": "project",
-      "tools": [
-        "Claude Code"
-      ]
-    },
-    "gemini": {
-      "path": "~/.gemini/config/skills/<name>/SKILL.md",
-      "scope": "global",
-      "tools": [
-        "Antigravity (global)"
-      ]
+      "label": "Claude Code",
+      "format": "dir",
+      "project": ".claude/skills/<name>/SKILL.md",
+      "global": "~/.claude/skills/<name>/SKILL.md"
     },
     "cursor": {
-      "path": ".cursor/rules/<name>.mdc",
-      "scope": "project",
-      "tools": [
-        "Cursor"
-      ]
+      "label": "Cursor (skills)",
+      "format": "dir",
+      "project": ".cursor/skills/<name>/SKILL.md",
+      "global": "~/.cursor/skills/<name>/SKILL.md"
     },
     "windsurf": {
-      "path": ".windsurf/rules/<name>.md",
-      "scope": "project",
-      "tools": [
-        "Windsurf"
-      ]
-    },
-    "zed": {
-      "path": ".zed/rules/<name>.md",
-      "scope": "project",
-      "tools": [
-        "Zed"
-      ]
+      "label": "Windsurf / Cascade (skills)",
+      "format": "dir",
+      "project": ".windsurf/skills/<name>/SKILL.md",
+      "global": "~/.codeium/windsurf/skills/<name>/SKILL.md"
     },
     "codex": {
-      "path": ".codex/skills/<name>/SKILL.md",
-      "scope": "project",
-      "tools": [
-        "Codex CLI"
-      ]
+      "label": "Codex CLI (skills feature)",
+      "format": "dir",
+      "project": ".codex/skills/<name>/SKILL.md",
+      "global": "~/.codex/skills/<name>/SKILL.md"
+    },
+    "gemini": {
+      "label": "Antigravity — global scope",
+      "format": "dir",
+      "project": ".gemini/config/skills/<name>/SKILL.md",
+      "global": "~/.gemini/config/skills/<name>/SKILL.md"
+    },
+    "antigravity-cli": {
+      "label": "Antigravity CLI (agy) — global scope",
+      "format": "dir",
+      "project": ".agent/skills/<name>/SKILL.md",
+      "global": "~/.gemini/antigravity-cli/skills/<name>/SKILL.md"
+    },
+    "cursor-rules": {
+      "label": "Cursor (rules .mdc — always loaded, high context cost)",
+      "format": "mdc",
+      "project": ".cursor/rules/<name>/<name>.mdc",
+      "global": "~/.cursor/rules/<name>/<name>.mdc"
+    },
+    "windsurf-rules": {
+      "label": "Windsurf (rules — model_decision trigger)",
+      "format": "windsurf",
+      "project": ".windsurf/rules/<name>/<name>.md",
+      "global": "~/.codeium/windsurf/rules/<name>/<name>.md"
+    },
+    "agentsmd": {
+      "label": "AGENTS.md skill index (Zed, Copilot, Aider, anything reading AGENTS.md)",
+      "format": "agents-md",
+      "project": "AGENTS.md",
+      "global": "~/.config/zed/AGENTS.md"
     }
   },
   "categories": [
@@ -767,7 +774,7 @@
           "name": "multi-factor-auth",
           "description": "Implements phishing-resistant second factors using WebAuthn passkeys and TOTP with verified enrollment, backup codes, and step-up verification for sensitive actions. Use when adding MFA to a login flow, requiring re-verification for privileged actions, or migrating accounts to passkeys.",
           "folder": "multi-factor-auth",
-          "lines": 127
+          "lines": 126
         },
         {
           "name": "owasp-top-ten",

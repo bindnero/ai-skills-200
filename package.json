@@ -42,6 +42,17 @@
     "CATALOG.md",
     "catalog.json",
     "README.md",
-    "LICENSE"
-  ]
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md",
+    "SECURITY.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-username>/ai-skills-200.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<your-username>/ai-skills-200/issues"
+  },
+  "homepage": "https://github.com/<your-username>/ai-skills-200#readme"
 }
