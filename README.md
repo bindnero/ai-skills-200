@@ -35,7 +35,7 @@ Agent tools all converged on the same idea — a folder with a `SKILL.md` that a
 ### Everything, everywhere
 
 ```bash
-git clone https://github.com/<your-username>/ai-skills-200.git
+git clone https://github.com/nerongai/ai-skills-200.git
 cd ai-skills-200
 npm run check          # validate 200 bundles, regenerate the catalog
 
