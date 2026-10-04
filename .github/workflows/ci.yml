@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 20
 
-      # Enforce the format contract across all 205 skill bundles.
+      # Enforce the format contract across every skill bundle.
       - name: Validate skills
         run: npm run validate
 
@@ -61,10 +61,14 @@ jobs:
       - name: Verify install counts
         run: |
           cd "$RUNNER_TEMP/proj"
+          # Counted from skills/, never hardcoded: the assertion exists to catch a
+          # partial install or a duplicated directory, and both survive a new skill.
+          expected=$(ls -d "$GITHUB_WORKSPACE"/skills/*/*/SKILL.md | wc -l)
+          echo "expected $expected bundles"
           for d in .agents .opencode .claude .cursor .windsurf .codex .gemini/config .agent; do
             n=$(ls "$d/skills" 2>/dev/null | wc -l)
             echo "$d/skills: $n"
-            [ "$n" -eq 205 ] || { echo "expected 205 in $d"; exit 1; }
+            [ "$n" -eq "$expected" ] || { echo "expected $expected in $d"; exit 1; }
           done
       - name: Uninstall and verify clean
         run: |
