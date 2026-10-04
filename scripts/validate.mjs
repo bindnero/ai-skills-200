@@ -12,6 +12,7 @@ const REQUIRED_SECTIONS = ["## Instructions", "## Patterns", "## Checklist", "##
 const errors = []
 const warnings = []
 const skills = []
+const boundaryRefs = []
 
 function parseFrontmatter(raw) {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)
@@ -102,7 +103,8 @@ for (const entry of walk(SKILLS_DIR)) {
   }
 
   if (!/\*\*Use when:\*\*/.test(body)) warnings.push(`${rel}: no "**Use when:**" trigger line`)
-  if (!/\*\*Do not use when:\*\*/.test(body)) warnings.push(`${rel}: no "**Do not use when:**" boundary line`)
+  const boundary = body.split(/\r?\n/).find((l) => l.startsWith("**Do not use when:**"))
+  if (!boundary) warnings.push(`${rel}: no "**Do not use when:**" boundary line`)
 
   const fences = (body.match(/^```/gm) || []).length
   if (fences % 2 !== 0) {
@@ -118,6 +120,15 @@ for (const entry of walk(SKILLS_DIR)) {
   const checklist = (body.match(/^- \[ \] /gm) || []).length
   if (checklist < 3) warnings.push(`${rel}: only ${checklist} checklist items`)
 
+  // A boundary line that names a sibling must name one that exists. Backticked tokens
+  // shaped like a skill name are checked; prose and code words on the same line are not.
+  if (boundary) {
+    for (const ref of boundary.match(/`([^`]+)`/g) || []) {
+      const token = ref.slice(1, -1)
+      if (/^[a-z0-9]+(-[a-z0-9]+)+$/.test(token)) boundaryRefs.push({ rel, token })
+    }
+  }
+
   skills.push({ ...data, folder: entry.name, category: entry.dir.slice(SKILLS_DIR.length + 1).split(/[\\/]/)[0], lines })
 }
 
@@ -125,6 +136,12 @@ const byName = new Map()
 for (const s of skills) {
   if (byName.has(s.name)) errors.push(`duplicate skill name "${s.name}" in ${s.category} and ${byName.get(s.name).category}`)
   else byName.set(s.name, s)
+}
+
+for (const { rel, token } of boundaryRefs) {
+  if (!byName.has(token)) {
+    errors.push(`${rel}: "Do not use when" names "${token}", which is not a skill — the boundary points at nothing`)
+  }
 }
 
 const seenDesc = new Map()

@@ -67,6 +67,14 @@ The body is only loaded *after* a skill fires, so a "when to use" section down t
 
 Naming the skill to use *instead* is the highest-value thing you can put there. It converts a wrong turn into a right one.
 
+Backtick that sibling name. The validator resolves every backticked token on the line that is shaped like a skill name, and fails the build if it names a skill that does not exist — which is what a rename leaves behind:
+
+```
+**Do not use when:** the issue is cache invalidation rather than query shape — use `caching-strategies`.
+```
+
+Not every boundary has a sibling to hand off to. "A test that fails deterministically every run is not flaky" is a correct boundary with nothing to point at, and that is allowed — the check only fires on names you chose to write down.
+
 ## The body
 
 Target **70-130 lines**. Under 40 and it is not worth loading. Over 260 and you should be splitting.
@@ -178,6 +186,7 @@ Enforced across every bundle:
 | At least 3 checklist items | warn |
 | `**Use when:**` line | warn |
 | `**Do not use when:**` line | warn |
+| Every backticked skill name on that line exists | error |
 
 Then regenerate the indexes:
 

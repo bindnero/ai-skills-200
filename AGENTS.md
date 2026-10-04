@@ -28,7 +28,7 @@ That runs `validate` then `catalog`. If you added or renamed a skill, also run:
 npm run docs
 ```
 
-Validation is strict and enforced in CI. `npm run validate` fails on: malformed frontmatter, any frontmatter key other than `name`/`description`, `name` not matching the folder, a `description` under 60 chars or without a trigger clause, first-person descriptions, duplicate names, duplicate descriptions, missing or out-of-order required sections, and bodies under 40 lines.
+Validation is strict and enforced in CI. `npm run validate` fails on: malformed frontmatter, any frontmatter key other than `name`/`description`, `name` not matching the folder, a `description` under 60 chars or without a trigger clause, first-person descriptions, duplicate names, duplicate descriptions, missing or out-of-order required sections, a `Do not use when` line that backticks a name no skill owns, unbalanced code fences, and bodies under 40 lines.
 
 ## Invariants — do not violate these
 
